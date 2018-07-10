@@ -52,6 +52,7 @@
         "onCommand:extension.laravelDocsInstallation",
         "onCommand:extension.laravelDocsLifecycle",
         "onCommand:extension.laravelDocsLocalization",
+        "onCommand:extension.laravelDocsLogging",
         "onCommand:extension.laravelDocsMail",
         "onCommand:extension.laravelDocsMiddleware",
         "onCommand:extension.laravelDocsMigrations",
@@ -85,6 +86,20 @@
     ],
     "main": "./out/extension",
     "contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "Laravel Docs Configuration",
+            "properties": {
+                "laravelDocs.version": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "default": null,
+                    "description": "Specify the version of the Laravel docs to use."
+                }
+            }
+        },
         "commands": [
             {
                 "command": "extension.laravelDocsArtisan",
@@ -280,6 +295,11 @@
                 "command": "extension.laravelDocsLocalization",
                 "category": "Laravel Docs",
                 "title": "Localization"
+            },
+            {
+                "command": "extension.laravelDocsLogging",
+                "category": "Laravel Docs",
+                "title": "Logging"
             },
             {
                 "command": "extension.laravelDocsMail",

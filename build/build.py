@@ -57,14 +57,16 @@ with open('../src/extension.ts', 'w+') as f:
     f.write("'use strict';\n")
     f.write("import * as vscode from 'vscode';\n\n")
     f.write("export function activate(context: vscode.ExtensionContext) {\n\n")
+    f.write('    let version = vscode.workspace.getConfiguration("laravelDocs").version;' + "\n")
+    f.write("    let baseUrl = version ? `https://laravel.com/docs/${version}/` : 'https://laravel.com/docs/';\n\n");
+
 
     for page in pages:
         f.write(
             '    let ' + page['command'] + ' = ' + 'vscode.commands.registerCommand('
             + "'extension." + page['command'] + "', () => {\n"
             + "        vscode.commands.executeCommand('vscode.open', "
-                + "vscode.Uri.parse('https://laravel.com/docs/" + page['slug'] 
-                + "'));\n"
+                + "vscode.Uri.parse(baseUrl + '" + page['slug'] + "'));\n"
             + "    });\n"
             + "    context.subscriptions.push(" + page['command'] + ");\n"
         )
