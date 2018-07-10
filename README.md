@@ -19,7 +19,7 @@ To use a specific version of Laravel in URLs, use this configuration option:
 
 ## Release Notes
 
-### 1.1.0
+### 1.3.0
 Added `laravelDocs.version` configuration option to specify Laravel version.
 
 ### 1.0.0
