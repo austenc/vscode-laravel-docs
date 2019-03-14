@@ -1,4 +1,5 @@
 import re
+import os
 import json
 import urllib.request
 from shutil import copyfile
@@ -20,6 +21,7 @@ docs = urllib.request.urlopen(req)
 links = re.findall('href="(/docs/.*?)"', docs.read().decode('utf-8'))
 found = []
 pages = []
+root = os.path.dirname(__file__)
 
 # Compile all the info for the pages
 for url in sorted(set(links)):
@@ -36,7 +38,7 @@ for url in sorted(set(links)):
         })
 
 # Generate command definitions in package.json
-with open('../package.json', 'r') as f:
+with open(os.path.join(root, '../package.json'), 'r') as f:
     data = json.load(f)
     data['contributes']['commands'] = []
     data['activationEvents'] = []
@@ -49,11 +51,11 @@ with open('../package.json', 'r') as f:
             "title": page['topic'],
         })
         
-with open('../package.json', 'w') as f:
+with open(os.path.join(root, '../package.json'), 'w') as f:
     json.dump(data, f, indent=4)
 
 # Generate the extension.ts file
-with open('../src/extension.ts', 'w+') as f:
+with open(os.path.join(root, '../src/extension.ts'), 'w+') as f:
     f.write("'use strict';\n")
     f.write("import * as vscode from 'vscode';\n\n")
     f.write("export function activate(context: vscode.ExtensionContext) {\n\n")
@@ -72,3 +74,5 @@ with open('../src/extension.ts', 'w+') as f:
         )
 
     f.write("\n}")
+
+print('Plugin files rebuilt successfully!')

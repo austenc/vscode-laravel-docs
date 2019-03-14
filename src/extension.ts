@@ -6,6 +6,10 @@ export function activate(context: vscode.ExtensionContext) {
     let version = vscode.workspace.getConfiguration("laravelDocs").version;
     let baseUrl = version ? `https://laravel.com/docs/${version}/` : 'https://laravel.com/docs/';
 
+    let laravelDocsApiAuthentication = vscode.commands.registerCommand('extension.laravelDocsApiAuthentication', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'api-authentication'));
+    });
+    context.subscriptions.push(laravelDocsApiAuthentication);
     let laravelDocsArtisan = vscode.commands.registerCommand('extension.laravelDocsArtisan', () => {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'artisan'));
     });
@@ -42,6 +46,10 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'configuration'));
     });
     context.subscriptions.push(laravelDocsConfiguration);
+    let laravelDocsConsoleTests = vscode.commands.registerCommand('extension.laravelDocsConsoleTests', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'console-tests'));
+    });
+    context.subscriptions.push(laravelDocsConsoleTests);
     let laravelDocsContainer = vscode.commands.registerCommand('extension.laravelDocsContainer', () => {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'container'));
     });
@@ -262,6 +270,10 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'structure'));
     });
     context.subscriptions.push(laravelDocsStructure);
+    let laravelDocsTelescope = vscode.commands.registerCommand('extension.laravelDocsTelescope', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'telescope'));
+    });
+    context.subscriptions.push(laravelDocsTelescope);
     let laravelDocsTesting = vscode.commands.registerCommand('extension.laravelDocsTesting', () => {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'testing'));
     });
@@ -282,6 +294,10 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'validation'));
     });
     context.subscriptions.push(laravelDocsValidation);
+    let laravelDocsVerification = vscode.commands.registerCommand('extension.laravelDocsVerification', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'verification'));
+    });
+    context.subscriptions.push(laravelDocsVerification);
     let laravelDocsViews = vscode.commands.registerCommand('extension.laravelDocsViews', () => {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'views'));
     });

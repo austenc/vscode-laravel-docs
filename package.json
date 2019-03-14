@@ -13,6 +13,7 @@
         "Other"
     ],
     "activationEvents": [
+        "onCommand:extension.laravelDocsApiAuthentication",
         "onCommand:extension.laravelDocsArtisan",
         "onCommand:extension.laravelDocsAuthentication",
         "onCommand:extension.laravelDocsAuthorization",
@@ -22,6 +23,7 @@
         "onCommand:extension.laravelDocsCache",
         "onCommand:extension.laravelDocsCollections",
         "onCommand:extension.laravelDocsConfiguration",
+        "onCommand:extension.laravelDocsConsoleTests",
         "onCommand:extension.laravelDocsContainer",
         "onCommand:extension.laravelDocsContracts",
         "onCommand:extension.laravelDocsContributions",
@@ -77,11 +79,13 @@
         "onCommand:extension.laravelDocsSession",
         "onCommand:extension.laravelDocsSocialite",
         "onCommand:extension.laravelDocsStructure",
+        "onCommand:extension.laravelDocsTelescope",
         "onCommand:extension.laravelDocsTesting",
         "onCommand:extension.laravelDocsUpgrade",
         "onCommand:extension.laravelDocsUrls",
         "onCommand:extension.laravelDocsValet",
         "onCommand:extension.laravelDocsValidation",
+        "onCommand:extension.laravelDocsVerification",
         "onCommand:extension.laravelDocsViews"
     ],
     "main": "./out/extension",
@@ -101,6 +105,11 @@
             }
         },
         "commands": [
+            {
+                "command": "extension.laravelDocsApiAuthentication",
+                "category": "Laravel Docs",
+                "title": "Api Authentication"
+            },
             {
                 "command": "extension.laravelDocsArtisan",
                 "category": "Laravel Docs",
@@ -145,6 +154,11 @@
                 "command": "extension.laravelDocsConfiguration",
                 "category": "Laravel Docs",
                 "title": "Configuration"
+            },
+            {
+                "command": "extension.laravelDocsConsoleTests",
+                "category": "Laravel Docs",
+                "title": "Console Tests"
             },
             {
                 "command": "extension.laravelDocsContainer",
@@ -422,6 +436,11 @@
                 "title": "Structure"
             },
             {
+                "command": "extension.laravelDocsTelescope",
+                "category": "Laravel Docs",
+                "title": "Telescope"
+            },
+            {
                 "command": "extension.laravelDocsTesting",
                 "category": "Laravel Docs",
                 "title": "Testing"
@@ -447,6 +466,11 @@
                 "title": "Validation"
             },
             {
+                "command": "extension.laravelDocsVerification",
+                "category": "Laravel Docs",
+                "title": "Verification"
+            },
+            {
                 "command": "extension.laravelDocsViews",
                 "category": "Laravel Docs",
                 "title": "Views"
@@ -461,9 +485,9 @@
         "test": "npm run compile && node ./node_modules/vscode/bin/test"
     },
     "devDependencies": {
-        "typescript": "^2.6.1",
-        "vscode": "^1.1.6",
+        "@types/mocha": "^2.2.42",
         "@types/node": "^7.0.43",
-        "@types/mocha": "^2.2.42"
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.30"
     }
 }
