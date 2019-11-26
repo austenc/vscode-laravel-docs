@@ -1,493 +1,494 @@
 {
-    "name": "laravel-docs",
-    "displayName": "Laravel Docs",
-    "description": "Easily access the Laravel documentation from within Code",
-    "version": "1.4.1",
-    "icon": "img/icon.png",
-    "publisher": "austenc",
-    "repository": "https://github.com/austenc/vscode-laravel-docs",
-    "engines": {
-        "vscode": "^1.19.0"
+  "name": "laravel-docs",
+  "displayName": "Laravel Docs",
+  "description": "Easily access the Laravel documentation from within Code",
+  "version": "1.4.1",
+  "icon": "img/icon.png",
+  "publisher": "austenc",
+  "repository": "https://github.com/austenc/vscode-laravel-docs",
+  "engines": {
+    "vscode": "^1.19.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.laravelDocsApiAuthentication",
+    "onCommand:extension.laravelDocsArtisan",
+    "onCommand:extension.laravelDocsAuthentication",
+    "onCommand:extension.laravelDocsAuthorization",
+    "onCommand:extension.laravelDocsBilling",
+    "onCommand:extension.laravelDocsBlade",
+    "onCommand:extension.laravelDocsBroadcasting",
+    "onCommand:extension.laravelDocsCache",
+    "onCommand:extension.laravelDocsCollections",
+    "onCommand:extension.laravelDocsConfiguration",
+    "onCommand:extension.laravelDocsConsoleTests",
+    "onCommand:extension.laravelDocsContainer",
+    "onCommand:extension.laravelDocsContracts",
+    "onCommand:extension.laravelDocsContributions",
+    "onCommand:extension.laravelDocsControllers",
+    "onCommand:extension.laravelDocsCsrf",
+    "onCommand:extension.laravelDocsDatabase",
+    "onCommand:extension.laravelDocsDatabaseTesting",
+    "onCommand:extension.laravelDocsDeployment",
+    "onCommand:extension.laravelDocsDusk",
+    "onCommand:extension.laravelDocsEloquent",
+    "onCommand:extension.laravelDocsEloquentCollections",
+    "onCommand:extension.laravelDocsEloquentMutators",
+    "onCommand:extension.laravelDocsEloquentRelationships",
+    "onCommand:extension.laravelDocsEloquentResources",
+    "onCommand:extension.laravelDocsEloquentSerialization",
+    "onCommand:extension.laravelDocsEncryption",
+    "onCommand:extension.laravelDocsEnvoy",
+    "onCommand:extension.laravelDocsErrors",
+    "onCommand:extension.laravelDocsEvents",
+    "onCommand:extension.laravelDocsFacades",
+    "onCommand:extension.laravelDocsFilesystem",
+    "onCommand:extension.laravelDocsFrontend",
+    "onCommand:extension.laravelDocsHashing",
+    "onCommand:extension.laravelDocsHelpers",
+    "onCommand:extension.laravelDocsHomestead",
+    "onCommand:extension.laravelDocsHorizon",
+    "onCommand:extension.laravelDocsHttpTests",
+    "onCommand:extension.laravelDocsInstallation",
+    "onCommand:extension.laravelDocsLifecycle",
+    "onCommand:extension.laravelDocsLocalization",
+    "onCommand:extension.laravelDocsLogging",
+    "onCommand:extension.laravelDocsMail",
+    "onCommand:extension.laravelDocsMiddleware",
+    "onCommand:extension.laravelDocsMigrations",
+    "onCommand:extension.laravelDocsMix",
+    "onCommand:extension.laravelDocsMocking",
+    "onCommand:extension.laravelDocsNotifications",
+    "onCommand:extension.laravelDocsPackages",
+    "onCommand:extension.laravelDocsPagination",
+    "onCommand:extension.laravelDocsPassport",
+    "onCommand:extension.laravelDocsPasswords",
+    "onCommand:extension.laravelDocsProviders",
+    "onCommand:extension.laravelDocsQueries",
+    "onCommand:extension.laravelDocsQueues",
+    "onCommand:extension.laravelDocsRedis",
+    "onCommand:extension.laravelDocsReleases",
+    "onCommand:extension.laravelDocsRequests",
+    "onCommand:extension.laravelDocsResponses",
+    "onCommand:extension.laravelDocsRouting",
+    "onCommand:extension.laravelDocsScheduling",
+    "onCommand:extension.laravelDocsScout",
+    "onCommand:extension.laravelDocsSeeding",
+    "onCommand:extension.laravelDocsSession",
+    "onCommand:extension.laravelDocsSocialite",
+    "onCommand:extension.laravelDocsStructure",
+    "onCommand:extension.laravelDocsTelescope",
+    "onCommand:extension.laravelDocsTesting",
+    "onCommand:extension.laravelDocsUpgrade",
+    "onCommand:extension.laravelDocsUrls",
+    "onCommand:extension.laravelDocsValet",
+    "onCommand:extension.laravelDocsValidation",
+    "onCommand:extension.laravelDocsVerification",
+    "onCommand:extension.laravelDocsViews"
+  ],
+  "main": "./out/extension",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Laravel Docs Configuration",
+      "properties": {
+        "laravelDocs.version": {
+          "type": [
+            "number",
+            "string",
+            "null"
+          ],
+          "default": 6.1,
+          "description": "Specify the version of the Laravel docs to use."
+        }
+      }
     },
-    "categories": [
-        "Other"
-    ],
-    "activationEvents": [
-        "onCommand:extension.laravelDocsApiAuthentication",
-        "onCommand:extension.laravelDocsArtisan",
-        "onCommand:extension.laravelDocsAuthentication",
-        "onCommand:extension.laravelDocsAuthorization",
-        "onCommand:extension.laravelDocsBilling",
-        "onCommand:extension.laravelDocsBlade",
-        "onCommand:extension.laravelDocsBroadcasting",
-        "onCommand:extension.laravelDocsCache",
-        "onCommand:extension.laravelDocsCollections",
-        "onCommand:extension.laravelDocsConfiguration",
-        "onCommand:extension.laravelDocsConsoleTests",
-        "onCommand:extension.laravelDocsContainer",
-        "onCommand:extension.laravelDocsContracts",
-        "onCommand:extension.laravelDocsContributions",
-        "onCommand:extension.laravelDocsControllers",
-        "onCommand:extension.laravelDocsCsrf",
-        "onCommand:extension.laravelDocsDatabase",
-        "onCommand:extension.laravelDocsDatabaseTesting",
-        "onCommand:extension.laravelDocsDeployment",
-        "onCommand:extension.laravelDocsDusk",
-        "onCommand:extension.laravelDocsEloquent",
-        "onCommand:extension.laravelDocsEloquentCollections",
-        "onCommand:extension.laravelDocsEloquentMutators",
-        "onCommand:extension.laravelDocsEloquentRelationships",
-        "onCommand:extension.laravelDocsEloquentResources",
-        "onCommand:extension.laravelDocsEloquentSerialization",
-        "onCommand:extension.laravelDocsEncryption",
-        "onCommand:extension.laravelDocsEnvoy",
-        "onCommand:extension.laravelDocsErrors",
-        "onCommand:extension.laravelDocsEvents",
-        "onCommand:extension.laravelDocsFacades",
-        "onCommand:extension.laravelDocsFilesystem",
-        "onCommand:extension.laravelDocsFrontend",
-        "onCommand:extension.laravelDocsHashing",
-        "onCommand:extension.laravelDocsHelpers",
-        "onCommand:extension.laravelDocsHomestead",
-        "onCommand:extension.laravelDocsHorizon",
-        "onCommand:extension.laravelDocsHttpTests",
-        "onCommand:extension.laravelDocsInstallation",
-        "onCommand:extension.laravelDocsLifecycle",
-        "onCommand:extension.laravelDocsLocalization",
-        "onCommand:extension.laravelDocsLogging",
-        "onCommand:extension.laravelDocsMail",
-        "onCommand:extension.laravelDocsMiddleware",
-        "onCommand:extension.laravelDocsMigrations",
-        "onCommand:extension.laravelDocsMix",
-        "onCommand:extension.laravelDocsMocking",
-        "onCommand:extension.laravelDocsNotifications",
-        "onCommand:extension.laravelDocsPackages",
-        "onCommand:extension.laravelDocsPagination",
-        "onCommand:extension.laravelDocsPassport",
-        "onCommand:extension.laravelDocsPasswords",
-        "onCommand:extension.laravelDocsProviders",
-        "onCommand:extension.laravelDocsQueries",
-        "onCommand:extension.laravelDocsQueues",
-        "onCommand:extension.laravelDocsRedis",
-        "onCommand:extension.laravelDocsReleases",
-        "onCommand:extension.laravelDocsRequests",
-        "onCommand:extension.laravelDocsResponses",
-        "onCommand:extension.laravelDocsRouting",
-        "onCommand:extension.laravelDocsScheduling",
-        "onCommand:extension.laravelDocsScout",
-        "onCommand:extension.laravelDocsSeeding",
-        "onCommand:extension.laravelDocsSession",
-        "onCommand:extension.laravelDocsSocialite",
-        "onCommand:extension.laravelDocsStructure",
-        "onCommand:extension.laravelDocsTelescope",
-        "onCommand:extension.laravelDocsTesting",
-        "onCommand:extension.laravelDocsUpgrade",
-        "onCommand:extension.laravelDocsUrls",
-        "onCommand:extension.laravelDocsValet",
-        "onCommand:extension.laravelDocsValidation",
-        "onCommand:extension.laravelDocsVerification",
-        "onCommand:extension.laravelDocsViews"
-    ],
-    "main": "./out/extension",
-    "contributes": {
-        "configuration": {
-            "type": "object",
-            "title": "Laravel Docs Configuration",
-            "properties": {
-                "laravelDocs.version": {
-                    "type": [
-                        "number",
-                        "null"
-                    ],
-                    "default": null,
-                    "description": "Specify the version of the Laravel docs to use."
-                }
-            }
-        },
-        "commands": [
-            {
-                "command": "extension.laravelDocsApiAuthentication",
-                "category": "Laravel Docs",
-                "title": "Api Authentication"
-            },
-            {
-                "command": "extension.laravelDocsArtisan",
-                "category": "Laravel Docs",
-                "title": "Artisan"
-            },
-            {
-                "command": "extension.laravelDocsAuthentication",
-                "category": "Laravel Docs",
-                "title": "Authentication"
-            },
-            {
-                "command": "extension.laravelDocsAuthorization",
-                "category": "Laravel Docs",
-                "title": "Authorization"
-            },
-            {
-                "command": "extension.laravelDocsBilling",
-                "category": "Laravel Docs",
-                "title": "Billing"
-            },
-            {
-                "command": "extension.laravelDocsBlade",
-                "category": "Laravel Docs",
-                "title": "Blade"
-            },
-            {
-                "command": "extension.laravelDocsBroadcasting",
-                "category": "Laravel Docs",
-                "title": "Broadcasting"
-            },
-            {
-                "command": "extension.laravelDocsCache",
-                "category": "Laravel Docs",
-                "title": "Cache"
-            },
-            {
-                "command": "extension.laravelDocsCollections",
-                "category": "Laravel Docs",
-                "title": "Collections"
-            },
-            {
-                "command": "extension.laravelDocsConfiguration",
-                "category": "Laravel Docs",
-                "title": "Configuration"
-            },
-            {
-                "command": "extension.laravelDocsConsoleTests",
-                "category": "Laravel Docs",
-                "title": "Console Tests"
-            },
-            {
-                "command": "extension.laravelDocsContainer",
-                "category": "Laravel Docs",
-                "title": "Container"
-            },
-            {
-                "command": "extension.laravelDocsContracts",
-                "category": "Laravel Docs",
-                "title": "Contracts"
-            },
-            {
-                "command": "extension.laravelDocsContributions",
-                "category": "Laravel Docs",
-                "title": "Contributions"
-            },
-            {
-                "command": "extension.laravelDocsControllers",
-                "category": "Laravel Docs",
-                "title": "Controllers"
-            },
-            {
-                "command": "extension.laravelDocsCsrf",
-                "category": "Laravel Docs",
-                "title": "Csrf"
-            },
-            {
-                "command": "extension.laravelDocsDatabase",
-                "category": "Laravel Docs",
-                "title": "Database"
-            },
-            {
-                "command": "extension.laravelDocsDatabaseTesting",
-                "category": "Laravel Docs",
-                "title": "Database Testing"
-            },
-            {
-                "command": "extension.laravelDocsDeployment",
-                "category": "Laravel Docs",
-                "title": "Deployment"
-            },
-            {
-                "command": "extension.laravelDocsDusk",
-                "category": "Laravel Docs",
-                "title": "Dusk"
-            },
-            {
-                "command": "extension.laravelDocsEloquent",
-                "category": "Laravel Docs",
-                "title": "Eloquent"
-            },
-            {
-                "command": "extension.laravelDocsEloquentCollections",
-                "category": "Laravel Docs",
-                "title": "Eloquent Collections"
-            },
-            {
-                "command": "extension.laravelDocsEloquentMutators",
-                "category": "Laravel Docs",
-                "title": "Eloquent Mutators"
-            },
-            {
-                "command": "extension.laravelDocsEloquentRelationships",
-                "category": "Laravel Docs",
-                "title": "Eloquent Relationships"
-            },
-            {
-                "command": "extension.laravelDocsEloquentResources",
-                "category": "Laravel Docs",
-                "title": "Eloquent Resources"
-            },
-            {
-                "command": "extension.laravelDocsEloquentSerialization",
-                "category": "Laravel Docs",
-                "title": "Eloquent Serialization"
-            },
-            {
-                "command": "extension.laravelDocsEncryption",
-                "category": "Laravel Docs",
-                "title": "Encryption"
-            },
-            {
-                "command": "extension.laravelDocsEnvoy",
-                "category": "Laravel Docs",
-                "title": "Envoy"
-            },
-            {
-                "command": "extension.laravelDocsErrors",
-                "category": "Laravel Docs",
-                "title": "Errors"
-            },
-            {
-                "command": "extension.laravelDocsEvents",
-                "category": "Laravel Docs",
-                "title": "Events"
-            },
-            {
-                "command": "extension.laravelDocsFacades",
-                "category": "Laravel Docs",
-                "title": "Facades"
-            },
-            {
-                "command": "extension.laravelDocsFilesystem",
-                "category": "Laravel Docs",
-                "title": "Filesystem"
-            },
-            {
-                "command": "extension.laravelDocsFrontend",
-                "category": "Laravel Docs",
-                "title": "Frontend"
-            },
-            {
-                "command": "extension.laravelDocsHashing",
-                "category": "Laravel Docs",
-                "title": "Hashing"
-            },
-            {
-                "command": "extension.laravelDocsHelpers",
-                "category": "Laravel Docs",
-                "title": "Helpers"
-            },
-            {
-                "command": "extension.laravelDocsHomestead",
-                "category": "Laravel Docs",
-                "title": "Homestead"
-            },
-            {
-                "command": "extension.laravelDocsHorizon",
-                "category": "Laravel Docs",
-                "title": "Horizon"
-            },
-            {
-                "command": "extension.laravelDocsHttpTests",
-                "category": "Laravel Docs",
-                "title": "Http Tests"
-            },
-            {
-                "command": "extension.laravelDocsInstallation",
-                "category": "Laravel Docs",
-                "title": "Installation"
-            },
-            {
-                "command": "extension.laravelDocsLifecycle",
-                "category": "Laravel Docs",
-                "title": "Lifecycle"
-            },
-            {
-                "command": "extension.laravelDocsLocalization",
-                "category": "Laravel Docs",
-                "title": "Localization"
-            },
-            {
-                "command": "extension.laravelDocsLogging",
-                "category": "Laravel Docs",
-                "title": "Logging"
-            },
-            {
-                "command": "extension.laravelDocsMail",
-                "category": "Laravel Docs",
-                "title": "Mail"
-            },
-            {
-                "command": "extension.laravelDocsMiddleware",
-                "category": "Laravel Docs",
-                "title": "Middleware"
-            },
-            {
-                "command": "extension.laravelDocsMigrations",
-                "category": "Laravel Docs",
-                "title": "Migrations"
-            },
-            {
-                "command": "extension.laravelDocsMix",
-                "category": "Laravel Docs",
-                "title": "Mix"
-            },
-            {
-                "command": "extension.laravelDocsMocking",
-                "category": "Laravel Docs",
-                "title": "Mocking"
-            },
-            {
-                "command": "extension.laravelDocsNotifications",
-                "category": "Laravel Docs",
-                "title": "Notifications"
-            },
-            {
-                "command": "extension.laravelDocsPackages",
-                "category": "Laravel Docs",
-                "title": "Packages"
-            },
-            {
-                "command": "extension.laravelDocsPagination",
-                "category": "Laravel Docs",
-                "title": "Pagination"
-            },
-            {
-                "command": "extension.laravelDocsPassport",
-                "category": "Laravel Docs",
-                "title": "Passport"
-            },
-            {
-                "command": "extension.laravelDocsPasswords",
-                "category": "Laravel Docs",
-                "title": "Passwords"
-            },
-            {
-                "command": "extension.laravelDocsProviders",
-                "category": "Laravel Docs",
-                "title": "Providers"
-            },
-            {
-                "command": "extension.laravelDocsQueries",
-                "category": "Laravel Docs",
-                "title": "Queries"
-            },
-            {
-                "command": "extension.laravelDocsQueues",
-                "category": "Laravel Docs",
-                "title": "Queues"
-            },
-            {
-                "command": "extension.laravelDocsRedis",
-                "category": "Laravel Docs",
-                "title": "Redis"
-            },
-            {
-                "command": "extension.laravelDocsReleases",
-                "category": "Laravel Docs",
-                "title": "Releases"
-            },
-            {
-                "command": "extension.laravelDocsRequests",
-                "category": "Laravel Docs",
-                "title": "Requests"
-            },
-            {
-                "command": "extension.laravelDocsResponses",
-                "category": "Laravel Docs",
-                "title": "Responses"
-            },
-            {
-                "command": "extension.laravelDocsRouting",
-                "category": "Laravel Docs",
-                "title": "Routing"
-            },
-            {
-                "command": "extension.laravelDocsScheduling",
-                "category": "Laravel Docs",
-                "title": "Scheduling"
-            },
-            {
-                "command": "extension.laravelDocsScout",
-                "category": "Laravel Docs",
-                "title": "Scout"
-            },
-            {
-                "command": "extension.laravelDocsSeeding",
-                "category": "Laravel Docs",
-                "title": "Seeding"
-            },
-            {
-                "command": "extension.laravelDocsSession",
-                "category": "Laravel Docs",
-                "title": "Session"
-            },
-            {
-                "command": "extension.laravelDocsSocialite",
-                "category": "Laravel Docs",
-                "title": "Socialite"
-            },
-            {
-                "command": "extension.laravelDocsStructure",
-                "category": "Laravel Docs",
-                "title": "Structure"
-            },
-            {
-                "command": "extension.laravelDocsTelescope",
-                "category": "Laravel Docs",
-                "title": "Telescope"
-            },
-            {
-                "command": "extension.laravelDocsTesting",
-                "category": "Laravel Docs",
-                "title": "Testing"
-            },
-            {
-                "command": "extension.laravelDocsUpgrade",
-                "category": "Laravel Docs",
-                "title": "Upgrade"
-            },
-            {
-                "command": "extension.laravelDocsUrls",
-                "category": "Laravel Docs",
-                "title": "Urls"
-            },
-            {
-                "command": "extension.laravelDocsValet",
-                "category": "Laravel Docs",
-                "title": "Valet"
-            },
-            {
-                "command": "extension.laravelDocsValidation",
-                "category": "Laravel Docs",
-                "title": "Validation"
-            },
-            {
-                "command": "extension.laravelDocsVerification",
-                "category": "Laravel Docs",
-                "title": "Verification"
-            },
-            {
-                "command": "extension.laravelDocsViews",
-                "category": "Laravel Docs",
-                "title": "Views"
-            }
-        ]
-    },
-    "scripts": {
-        "vscode:prepublish": "npm run compile",
-        "compile": "tsc -p ./",
-        "watch": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "npm run compile && node ./node_modules/vscode/bin/test"
-    },
-    "devDependencies": {
-        "@types/mocha": "^2.2.42",
-        "@types/node": "^7.0.43",
-        "typescript": "^2.6.1",
-        "vscode": "^1.1.33"
-    }
+    "commands": [
+      {
+        "command": "extension.laravelDocsApiAuthentication",
+        "category": "Laravel Docs",
+        "title": "Api Authentication"
+      },
+      {
+        "command": "extension.laravelDocsArtisan",
+        "category": "Laravel Docs",
+        "title": "Artisan"
+      },
+      {
+        "command": "extension.laravelDocsAuthentication",
+        "category": "Laravel Docs",
+        "title": "Authentication"
+      },
+      {
+        "command": "extension.laravelDocsAuthorization",
+        "category": "Laravel Docs",
+        "title": "Authorization"
+      },
+      {
+        "command": "extension.laravelDocsBilling",
+        "category": "Laravel Docs",
+        "title": "Billing"
+      },
+      {
+        "command": "extension.laravelDocsBlade",
+        "category": "Laravel Docs",
+        "title": "Blade"
+      },
+      {
+        "command": "extension.laravelDocsBroadcasting",
+        "category": "Laravel Docs",
+        "title": "Broadcasting"
+      },
+      {
+        "command": "extension.laravelDocsCache",
+        "category": "Laravel Docs",
+        "title": "Cache"
+      },
+      {
+        "command": "extension.laravelDocsCollections",
+        "category": "Laravel Docs",
+        "title": "Collections"
+      },
+      {
+        "command": "extension.laravelDocsConfiguration",
+        "category": "Laravel Docs",
+        "title": "Configuration"
+      },
+      {
+        "command": "extension.laravelDocsConsoleTests",
+        "category": "Laravel Docs",
+        "title": "Console Tests"
+      },
+      {
+        "command": "extension.laravelDocsContainer",
+        "category": "Laravel Docs",
+        "title": "Container"
+      },
+      {
+        "command": "extension.laravelDocsContracts",
+        "category": "Laravel Docs",
+        "title": "Contracts"
+      },
+      {
+        "command": "extension.laravelDocsContributions",
+        "category": "Laravel Docs",
+        "title": "Contributions"
+      },
+      {
+        "command": "extension.laravelDocsControllers",
+        "category": "Laravel Docs",
+        "title": "Controllers"
+      },
+      {
+        "command": "extension.laravelDocsCsrf",
+        "category": "Laravel Docs",
+        "title": "Csrf"
+      },
+      {
+        "command": "extension.laravelDocsDatabase",
+        "category": "Laravel Docs",
+        "title": "Database"
+      },
+      {
+        "command": "extension.laravelDocsDatabaseTesting",
+        "category": "Laravel Docs",
+        "title": "Database Testing"
+      },
+      {
+        "command": "extension.laravelDocsDeployment",
+        "category": "Laravel Docs",
+        "title": "Deployment"
+      },
+      {
+        "command": "extension.laravelDocsDusk",
+        "category": "Laravel Docs",
+        "title": "Dusk"
+      },
+      {
+        "command": "extension.laravelDocsEloquent",
+        "category": "Laravel Docs",
+        "title": "Eloquent"
+      },
+      {
+        "command": "extension.laravelDocsEloquentCollections",
+        "category": "Laravel Docs",
+        "title": "Eloquent Collections"
+      },
+      {
+        "command": "extension.laravelDocsEloquentMutators",
+        "category": "Laravel Docs",
+        "title": "Eloquent Mutators"
+      },
+      {
+        "command": "extension.laravelDocsEloquentRelationships",
+        "category": "Laravel Docs",
+        "title": "Eloquent Relationships"
+      },
+      {
+        "command": "extension.laravelDocsEloquentResources",
+        "category": "Laravel Docs",
+        "title": "Eloquent Resources"
+      },
+      {
+        "command": "extension.laravelDocsEloquentSerialization",
+        "category": "Laravel Docs",
+        "title": "Eloquent Serialization"
+      },
+      {
+        "command": "extension.laravelDocsEncryption",
+        "category": "Laravel Docs",
+        "title": "Encryption"
+      },
+      {
+        "command": "extension.laravelDocsEnvoy",
+        "category": "Laravel Docs",
+        "title": "Envoy"
+      },
+      {
+        "command": "extension.laravelDocsErrors",
+        "category": "Laravel Docs",
+        "title": "Errors"
+      },
+      {
+        "command": "extension.laravelDocsEvents",
+        "category": "Laravel Docs",
+        "title": "Events"
+      },
+      {
+        "command": "extension.laravelDocsFacades",
+        "category": "Laravel Docs",
+        "title": "Facades"
+      },
+      {
+        "command": "extension.laravelDocsFilesystem",
+        "category": "Laravel Docs",
+        "title": "Filesystem"
+      },
+      {
+        "command": "extension.laravelDocsFrontend",
+        "category": "Laravel Docs",
+        "title": "Frontend"
+      },
+      {
+        "command": "extension.laravelDocsHashing",
+        "category": "Laravel Docs",
+        "title": "Hashing"
+      },
+      {
+        "command": "extension.laravelDocsHelpers",
+        "category": "Laravel Docs",
+        "title": "Helpers"
+      },
+      {
+        "command": "extension.laravelDocsHomestead",
+        "category": "Laravel Docs",
+        "title": "Homestead"
+      },
+      {
+        "command": "extension.laravelDocsHorizon",
+        "category": "Laravel Docs",
+        "title": "Horizon"
+      },
+      {
+        "command": "extension.laravelDocsHttpTests",
+        "category": "Laravel Docs",
+        "title": "Http Tests"
+      },
+      {
+        "command": "extension.laravelDocsInstallation",
+        "category": "Laravel Docs",
+        "title": "Installation"
+      },
+      {
+        "command": "extension.laravelDocsLifecycle",
+        "category": "Laravel Docs",
+        "title": "Lifecycle"
+      },
+      {
+        "command": "extension.laravelDocsLocalization",
+        "category": "Laravel Docs",
+        "title": "Localization"
+      },
+      {
+        "command": "extension.laravelDocsLogging",
+        "category": "Laravel Docs",
+        "title": "Logging"
+      },
+      {
+        "command": "extension.laravelDocsMail",
+        "category": "Laravel Docs",
+        "title": "Mail"
+      },
+      {
+        "command": "extension.laravelDocsMiddleware",
+        "category": "Laravel Docs",
+        "title": "Middleware"
+      },
+      {
+        "command": "extension.laravelDocsMigrations",
+        "category": "Laravel Docs",
+        "title": "Migrations"
+      },
+      {
+        "command": "extension.laravelDocsMix",
+        "category": "Laravel Docs",
+        "title": "Mix"
+      },
+      {
+        "command": "extension.laravelDocsMocking",
+        "category": "Laravel Docs",
+        "title": "Mocking"
+      },
+      {
+        "command": "extension.laravelDocsNotifications",
+        "category": "Laravel Docs",
+        "title": "Notifications"
+      },
+      {
+        "command": "extension.laravelDocsPackages",
+        "category": "Laravel Docs",
+        "title": "Packages"
+      },
+      {
+        "command": "extension.laravelDocsPagination",
+        "category": "Laravel Docs",
+        "title": "Pagination"
+      },
+      {
+        "command": "extension.laravelDocsPassport",
+        "category": "Laravel Docs",
+        "title": "Passport"
+      },
+      {
+        "command": "extension.laravelDocsPasswords",
+        "category": "Laravel Docs",
+        "title": "Passwords"
+      },
+      {
+        "command": "extension.laravelDocsProviders",
+        "category": "Laravel Docs",
+        "title": "Providers"
+      },
+      {
+        "command": "extension.laravelDocsQueries",
+        "category": "Laravel Docs",
+        "title": "Queries"
+      },
+      {
+        "command": "extension.laravelDocsQueues",
+        "category": "Laravel Docs",
+        "title": "Queues"
+      },
+      {
+        "command": "extension.laravelDocsRedis",
+        "category": "Laravel Docs",
+        "title": "Redis"
+      },
+      {
+        "command": "extension.laravelDocsReleases",
+        "category": "Laravel Docs",
+        "title": "Releases"
+      },
+      {
+        "command": "extension.laravelDocsRequests",
+        "category": "Laravel Docs",
+        "title": "Requests"
+      },
+      {
+        "command": "extension.laravelDocsResponses",
+        "category": "Laravel Docs",
+        "title": "Responses"
+      },
+      {
+        "command": "extension.laravelDocsRouting",
+        "category": "Laravel Docs",
+        "title": "Routing"
+      },
+      {
+        "command": "extension.laravelDocsScheduling",
+        "category": "Laravel Docs",
+        "title": "Scheduling"
+      },
+      {
+        "command": "extension.laravelDocsScout",
+        "category": "Laravel Docs",
+        "title": "Scout"
+      },
+      {
+        "command": "extension.laravelDocsSeeding",
+        "category": "Laravel Docs",
+        "title": "Seeding"
+      },
+      {
+        "command": "extension.laravelDocsSession",
+        "category": "Laravel Docs",
+        "title": "Session"
+      },
+      {
+        "command": "extension.laravelDocsSocialite",
+        "category": "Laravel Docs",
+        "title": "Socialite"
+      },
+      {
+        "command": "extension.laravelDocsStructure",
+        "category": "Laravel Docs",
+        "title": "Structure"
+      },
+      {
+        "command": "extension.laravelDocsTelescope",
+        "category": "Laravel Docs",
+        "title": "Telescope"
+      },
+      {
+        "command": "extension.laravelDocsTesting",
+        "category": "Laravel Docs",
+        "title": "Testing"
+      },
+      {
+        "command": "extension.laravelDocsUpgrade",
+        "category": "Laravel Docs",
+        "title": "Upgrade"
+      },
+      {
+        "command": "extension.laravelDocsUrls",
+        "category": "Laravel Docs",
+        "title": "Urls"
+      },
+      {
+        "command": "extension.laravelDocsValet",
+        "category": "Laravel Docs",
+        "title": "Valet"
+      },
+      {
+        "command": "extension.laravelDocsValidation",
+        "category": "Laravel Docs",
+        "title": "Validation"
+      },
+      {
+        "command": "extension.laravelDocsVerification",
+        "category": "Laravel Docs",
+        "title": "Verification"
+      },
+      {
+        "command": "extension.laravelDocsViews",
+        "category": "Laravel Docs",
+        "title": "Views"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^7.0.43",
+    "typescript": "^2.6.1",
+    "vscode": "^1.1.33"
+  }
 }
