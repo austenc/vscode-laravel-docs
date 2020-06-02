@@ -101,7 +101,7 @@
                         "string",
                         "null"
                     ],
-                    "default": 6.1,
+                    "default": "",
                     "description": "Specify the version of the Laravel docs to use."
                 }
             }

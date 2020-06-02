@@ -6,6 +6,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## 1.5.1
+
+- Fixed default version config
+
 ## 1.5.0
 
 - Slight changes for Laravel 7
