@@ -6,6 +6,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## 1.6.0
+
+- Added latest from Laravel 8 version of the docs
+
 ## 1.5.1
 
 - Fixed default version config

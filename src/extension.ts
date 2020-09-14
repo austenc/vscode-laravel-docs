@@ -34,6 +34,10 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'cache'));
     });
     context.subscriptions.push(laravelDocsCache);
+    let laravelDocsCashierPaddle = vscode.commands.registerCommand('extension.laravelDocsCashierPaddle', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'cashier-paddle'));
+    });
+    context.subscriptions.push(laravelDocsCashierPaddle);
     let laravelDocsCollections = vscode.commands.registerCommand('extension.laravelDocsCollections', () => {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'collections'));
     });
@@ -130,10 +134,6 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'filesystem'));
     });
     context.subscriptions.push(laravelDocsFilesystem);
-    let laravelDocsFrontend = vscode.commands.registerCommand('extension.laravelDocsFrontend', () => {
-        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'frontend'));
-    });
-    context.subscriptions.push(laravelDocsFrontend);
     let laravelDocsHashing = vscode.commands.registerCommand('extension.laravelDocsHashing', () => {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'hashing'));
     });

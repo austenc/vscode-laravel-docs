@@ -20,6 +20,7 @@
         "onCommand:extension.laravelDocsBlade",
         "onCommand:extension.laravelDocsBroadcasting",
         "onCommand:extension.laravelDocsCache",
+        "onCommand:extension.laravelDocsCashierPaddle",
         "onCommand:extension.laravelDocsCollections",
         "onCommand:extension.laravelDocsConfiguration",
         "onCommand:extension.laravelDocsConsoleTests",
@@ -44,7 +45,6 @@
         "onCommand:extension.laravelDocsEvents",
         "onCommand:extension.laravelDocsFacades",
         "onCommand:extension.laravelDocsFilesystem",
-        "onCommand:extension.laravelDocsFrontend",
         "onCommand:extension.laravelDocsHashing",
         "onCommand:extension.laravelDocsHelpers",
         "onCommand:extension.laravelDocsHomestead",
@@ -141,6 +141,11 @@
                 "command": "extension.laravelDocsCache",
                 "category": "Laravel Docs",
                 "title": "Cache"
+            },
+            {
+                "command": "extension.laravelDocsCashierPaddle",
+                "category": "Laravel Docs",
+                "title": "Cashier Paddle"
             },
             {
                 "command": "extension.laravelDocsCollections",
@@ -261,11 +266,6 @@
                 "command": "extension.laravelDocsFilesystem",
                 "category": "Laravel Docs",
                 "title": "Filesystem"
-            },
-            {
-                "command": "extension.laravelDocsFrontend",
-                "category": "Laravel Docs",
-                "title": "Frontend"
             },
             {
                 "command": "extension.laravelDocsHashing",
