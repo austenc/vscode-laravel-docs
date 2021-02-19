@@ -45,6 +45,7 @@
         "onCommand:extension.laravelDocsEvents",
         "onCommand:extension.laravelDocsFacades",
         "onCommand:extension.laravelDocsFilesystem",
+        "onCommand:extension.laravelDocsFortify",
         "onCommand:extension.laravelDocsHashing",
         "onCommand:extension.laravelDocsHelpers",
         "onCommand:extension.laravelDocsHomestead",
@@ -73,12 +74,14 @@
         "onCommand:extension.laravelDocsRequests",
         "onCommand:extension.laravelDocsResponses",
         "onCommand:extension.laravelDocsRouting",
+        "onCommand:extension.laravelDocsSail",
         "onCommand:extension.laravelDocsSanctum",
         "onCommand:extension.laravelDocsScheduling",
         "onCommand:extension.laravelDocsScout",
         "onCommand:extension.laravelDocsSeeding",
         "onCommand:extension.laravelDocsSession",
         "onCommand:extension.laravelDocsSocialite",
+        "onCommand:extension.laravelDocsStarterKits",
         "onCommand:extension.laravelDocsStructure",
         "onCommand:extension.laravelDocsTelescope",
         "onCommand:extension.laravelDocsTesting",
@@ -268,6 +271,11 @@
                 "title": "Filesystem"
             },
             {
+                "command": "extension.laravelDocsFortify",
+                "category": "Laravel Docs",
+                "title": "Fortify"
+            },
+            {
                 "command": "extension.laravelDocsHashing",
                 "category": "Laravel Docs",
                 "title": "Hashing"
@@ -408,6 +416,11 @@
                 "title": "Routing"
             },
             {
+                "command": "extension.laravelDocsSail",
+                "category": "Laravel Docs",
+                "title": "Sail"
+            },
+            {
                 "command": "extension.laravelDocsSanctum",
                 "category": "Laravel Docs",
                 "title": "Sanctum"
@@ -436,6 +449,11 @@
                 "command": "extension.laravelDocsSocialite",
                 "category": "Laravel Docs",
                 "title": "Socialite"
+            },
+            {
+                "command": "extension.laravelDocsStarterKits",
+                "category": "Laravel Docs",
+                "title": "Starter Kits"
             },
             {
                 "command": "extension.laravelDocsStructure",

@@ -134,6 +134,10 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'filesystem'));
     });
     context.subscriptions.push(laravelDocsFilesystem);
+    let laravelDocsFortify = vscode.commands.registerCommand('extension.laravelDocsFortify', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'fortify'));
+    });
+    context.subscriptions.push(laravelDocsFortify);
     let laravelDocsHashing = vscode.commands.registerCommand('extension.laravelDocsHashing', () => {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'hashing'));
     });
@@ -246,6 +250,10 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'routing'));
     });
     context.subscriptions.push(laravelDocsRouting);
+    let laravelDocsSail = vscode.commands.registerCommand('extension.laravelDocsSail', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'sail'));
+    });
+    context.subscriptions.push(laravelDocsSail);
     let laravelDocsSanctum = vscode.commands.registerCommand('extension.laravelDocsSanctum', () => {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'sanctum'));
     });
@@ -270,6 +278,10 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'socialite'));
     });
     context.subscriptions.push(laravelDocsSocialite);
+    let laravelDocsStarterKits = vscode.commands.registerCommand('extension.laravelDocsStarterKits', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'starter-kits'));
+    });
+    context.subscriptions.push(laravelDocsStarterKits);
     let laravelDocsStructure = vscode.commands.registerCommand('extension.laravelDocsStructure', () => {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'structure'));
     });
