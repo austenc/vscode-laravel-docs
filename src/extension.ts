@@ -202,6 +202,10 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'notifications'));
     });
     context.subscriptions.push(laravelDocsNotifications);
+    let laravelDocsOctane = vscode.commands.registerCommand('extension.laravelDocsOctane', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'octane'));
+    });
+    context.subscriptions.push(laravelDocsOctane);
     let laravelDocsPackages = vscode.commands.registerCommand('extension.laravelDocsPackages', () => {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'packages'));
     });
@@ -230,6 +234,10 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'queues'));
     });
     context.subscriptions.push(laravelDocsQueues);
+    let laravelDocsRateLimiting = vscode.commands.registerCommand('extension.laravelDocsRateLimiting', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'rate-limiting'));
+    });
+    context.subscriptions.push(laravelDocsRateLimiting);
     let laravelDocsRedis = vscode.commands.registerCommand('extension.laravelDocsRedis', () => {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'redis'));
     });

@@ -62,6 +62,7 @@
         "onCommand:extension.laravelDocsMix",
         "onCommand:extension.laravelDocsMocking",
         "onCommand:extension.laravelDocsNotifications",
+        "onCommand:extension.laravelDocsOctane",
         "onCommand:extension.laravelDocsPackages",
         "onCommand:extension.laravelDocsPagination",
         "onCommand:extension.laravelDocsPassport",
@@ -69,6 +70,7 @@
         "onCommand:extension.laravelDocsProviders",
         "onCommand:extension.laravelDocsQueries",
         "onCommand:extension.laravelDocsQueues",
+        "onCommand:extension.laravelDocsRateLimiting",
         "onCommand:extension.laravelDocsRedis",
         "onCommand:extension.laravelDocsReleases",
         "onCommand:extension.laravelDocsRequests",
@@ -356,6 +358,11 @@
                 "title": "Notifications"
             },
             {
+                "command": "extension.laravelDocsOctane",
+                "category": "Laravel Docs",
+                "title": "Octane"
+            },
+            {
                 "command": "extension.laravelDocsPackages",
                 "category": "Laravel Docs",
                 "title": "Packages"
@@ -389,6 +396,11 @@
                 "command": "extension.laravelDocsQueues",
                 "category": "Laravel Docs",
                 "title": "Queues"
+            },
+            {
+                "command": "extension.laravelDocsRateLimiting",
+                "category": "Laravel Docs",
+                "title": "Rate Limiting"
             },
             {
                 "command": "extension.laravelDocsRedis",
