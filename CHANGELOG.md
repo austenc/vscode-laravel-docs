@@ -8,6 +8,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## 1.9.0
 - Updated to include Laravel 10 docs
+- Added MIT license
 
 ## 1.8.0
 - Added new documentation sections from Laravel 9
