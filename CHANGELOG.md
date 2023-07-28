@@ -6,6 +6,12 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## 1.9.0
+- Updated to include Laravel 10 docs
+
+## 1.8.0
+- Added new documentation sections from Laravel 9
+
 ## 1.6.0
 
 - Added latest from Laravel 8 version of the docs
