@@ -35,6 +35,7 @@
         "onCommand:extension.laravelDocsDusk",
         "onCommand:extension.laravelDocsEloquent",
         "onCommand:extension.laravelDocsEloquentCollections",
+        "onCommand:extension.laravelDocsEloquentFactories",
         "onCommand:extension.laravelDocsEloquentMutators",
         "onCommand:extension.laravelDocsEloquentRelationships",
         "onCommand:extension.laravelDocsEloquentResources",
@@ -46,6 +47,7 @@
         "onCommand:extension.laravelDocsFacades",
         "onCommand:extension.laravelDocsFilesystem",
         "onCommand:extension.laravelDocsFortify",
+        "onCommand:extension.laravelDocsFrontend",
         "onCommand:extension.laravelDocsHashing",
         "onCommand:extension.laravelDocsHelpers",
         "onCommand:extension.laravelDocsHomestead",
@@ -67,6 +69,10 @@
         "onCommand:extension.laravelDocsPagination",
         "onCommand:extension.laravelDocsPassport",
         "onCommand:extension.laravelDocsPasswords",
+        "onCommand:extension.laravelDocsPennant",
+        "onCommand:extension.laravelDocsPint",
+        "onCommand:extension.laravelDocsPrecognition",
+        "onCommand:extension.laravelDocsProcesses",
         "onCommand:extension.laravelDocsProviders",
         "onCommand:extension.laravelDocsQueries",
         "onCommand:extension.laravelDocsQueues",
@@ -92,7 +98,8 @@
         "onCommand:extension.laravelDocsValet",
         "onCommand:extension.laravelDocsValidation",
         "onCommand:extension.laravelDocsVerification",
-        "onCommand:extension.laravelDocsViews"
+        "onCommand:extension.laravelDocsViews",
+        "onCommand:extension.laravelDocsVite"
     ],
     "main": "./out/extension",
     "contributes": {
@@ -223,6 +230,11 @@
                 "title": "Eloquent Collections"
             },
             {
+                "command": "extension.laravelDocsEloquentFactories",
+                "category": "Laravel Docs",
+                "title": "Eloquent Factories"
+            },
+            {
                 "command": "extension.laravelDocsEloquentMutators",
                 "category": "Laravel Docs",
                 "title": "Eloquent Mutators"
@@ -276,6 +288,11 @@
                 "command": "extension.laravelDocsFortify",
                 "category": "Laravel Docs",
                 "title": "Fortify"
+            },
+            {
+                "command": "extension.laravelDocsFrontend",
+                "category": "Laravel Docs",
+                "title": "Frontend"
             },
             {
                 "command": "extension.laravelDocsHashing",
@@ -381,6 +398,26 @@
                 "command": "extension.laravelDocsPasswords",
                 "category": "Laravel Docs",
                 "title": "Passwords"
+            },
+            {
+                "command": "extension.laravelDocsPennant",
+                "category": "Laravel Docs",
+                "title": "Pennant"
+            },
+            {
+                "command": "extension.laravelDocsPint",
+                "category": "Laravel Docs",
+                "title": "Pint"
+            },
+            {
+                "command": "extension.laravelDocsPrecognition",
+                "category": "Laravel Docs",
+                "title": "Precognition"
+            },
+            {
+                "command": "extension.laravelDocsProcesses",
+                "category": "Laravel Docs",
+                "title": "Processes"
             },
             {
                 "command": "extension.laravelDocsProviders",
@@ -511,6 +548,11 @@
                 "command": "extension.laravelDocsViews",
                 "category": "Laravel Docs",
                 "title": "Views"
+            },
+            {
+                "command": "extension.laravelDocsVite",
+                "category": "Laravel Docs",
+                "title": "Vite"
             }
         ]
     },

@@ -94,6 +94,10 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'eloquent-collections'));
     });
     context.subscriptions.push(laravelDocsEloquentCollections);
+    let laravelDocsEloquentFactories = vscode.commands.registerCommand('extension.laravelDocsEloquentFactories', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'eloquent-factories'));
+    });
+    context.subscriptions.push(laravelDocsEloquentFactories);
     let laravelDocsEloquentMutators = vscode.commands.registerCommand('extension.laravelDocsEloquentMutators', () => {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'eloquent-mutators'));
     });
@@ -138,6 +142,10 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'fortify'));
     });
     context.subscriptions.push(laravelDocsFortify);
+    let laravelDocsFrontend = vscode.commands.registerCommand('extension.laravelDocsFrontend', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'frontend'));
+    });
+    context.subscriptions.push(laravelDocsFrontend);
     let laravelDocsHashing = vscode.commands.registerCommand('extension.laravelDocsHashing', () => {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'hashing'));
     });
@@ -222,6 +230,22 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'passwords'));
     });
     context.subscriptions.push(laravelDocsPasswords);
+    let laravelDocsPennant = vscode.commands.registerCommand('extension.laravelDocsPennant', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'pennant'));
+    });
+    context.subscriptions.push(laravelDocsPennant);
+    let laravelDocsPint = vscode.commands.registerCommand('extension.laravelDocsPint', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'pint'));
+    });
+    context.subscriptions.push(laravelDocsPint);
+    let laravelDocsPrecognition = vscode.commands.registerCommand('extension.laravelDocsPrecognition', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'precognition'));
+    });
+    context.subscriptions.push(laravelDocsPrecognition);
+    let laravelDocsProcesses = vscode.commands.registerCommand('extension.laravelDocsProcesses', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'processes'));
+    });
+    context.subscriptions.push(laravelDocsProcesses);
     let laravelDocsProviders = vscode.commands.registerCommand('extension.laravelDocsProviders', () => {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'providers'));
     });
@@ -326,5 +350,9 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'views'));
     });
     context.subscriptions.push(laravelDocsViews);
+    let laravelDocsVite = vscode.commands.registerCommand('extension.laravelDocsVite', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'vite'));
+    });
+    context.subscriptions.push(laravelDocsVite);
 
 }
