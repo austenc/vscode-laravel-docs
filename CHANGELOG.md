@@ -6,6 +6,9 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## 1.11.0
+- Added missing docs sections for new Laravel stuff
+
 ## 1.9.0
 - Updated to include Laravel 10 docs
 - Added MIT license
