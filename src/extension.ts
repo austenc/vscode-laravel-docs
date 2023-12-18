@@ -1,5 +1,5 @@
 'use strict';
-import { workspace, commands, open, Uri, ExtensionContext } from 'vscode'
+import { workspace, commands, Uri, ExtensionContext } from 'vscode'
 
 export function activate(context: ExtensionContext) {
 
