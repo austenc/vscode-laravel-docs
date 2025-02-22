@@ -2,7 +2,7 @@
     "name": "laravel-docs",
     "displayName": "Laravel Docs",
     "description": "Easily access the Laravel documentation from within Code",
-    "version": "1.11.0",
+    "version": "1.12.0",
     "icon": "img/icon.png",
     "publisher": "austenc",
     "repository": "https://github.com/austenc/vscode-laravel-docs",
