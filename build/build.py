@@ -60,14 +60,15 @@ with open(os.path.join(root, '../src/extension.ts'), 'w+') as f:
     f.write("import { workspace, commands, Uri, ExtensionContext } from 'vscode'\n\n")
     f.write("export function activate(context: ExtensionContext) {\n\n")
     f.write('    let version = workspace.getConfiguration("laravelDocs").version;' + "\n")
-    f.write("    let baseUrl = version ? `https://laravel.com/docs/${version}/` : 'https://laravel.com/docs/';\n\n");
-
+    f.write("    let baseUrl = version ? `https://laravel.com/docs/${version}/` : 'https://laravel.com/docs/';\n\n")
+    f.write("    const config = vscode.workspace.getConfiguration('laravelDocs');\n")
+    f.write("    const commandName = config.useSimpleBrowser ? 'simpleBrowser.show' : 'vscode.open';\n\n")
 
     for page in pages:
         f.write(
             '    let ' + page['command'] + ' = ' + 'commands.registerCommand('
             + "'extension." + page['command'] + "', () => {\n"
-            + "        commands.executeCommand('vscode.open', "
+            + "        commands.executeCommand(commandName, "
                 + "Uri.parse(baseUrl + '" + page['slug'] + "'));\n"
             + "    });\n"
             + "    context.subscriptions.push(" + page['command'] + ");\n"

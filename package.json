@@ -26,6 +26,12 @@
                     ],
                     "default": "",
                     "description": "Specify the version of the Laravel docs to use."
+                },
+                "laravelDocs.useSimpleBrowser": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Use the simple browser to open the docs inside vscode instead of the default browser.",
+                    "scope": "resource"
                 }
             }
         },
