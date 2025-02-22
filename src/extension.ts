@@ -1,373 +1,389 @@
 'use strict';
-import { workspace, commands, Uri, ExtensionContext } from 'vscode'
+import * as vscode from 'vscode'
 
-export function activate(context: ExtensionContext) {
+export function activate(context: vscode.ExtensionContext) {
 
-    let version = workspace.getConfiguration("laravelDocs").version;
+    let version = vscode.workspace.getConfiguration("laravelDocs").version;
     let baseUrl = version ? `https://laravel.com/docs/${version}/` : 'https://laravel.com/docs/';
 
-    let laravelDocsArtisan = commands.registerCommand('extension.laravelDocsArtisan', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'artisan'));
+    let laravelDocsArtisan = vscode.commands.registerCommand('extension.laravelDocsArtisan', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'artisan'));
     });
     context.subscriptions.push(laravelDocsArtisan);
-    let laravelDocsAuthentication = commands.registerCommand('extension.laravelDocsAuthentication', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'authentication'));
+    let laravelDocsAuthentication = vscode.commands.registerCommand('extension.laravelDocsAuthentication', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'authentication'));
     });
     context.subscriptions.push(laravelDocsAuthentication);
-    let laravelDocsAuthorization = commands.registerCommand('extension.laravelDocsAuthorization', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'authorization'));
+    let laravelDocsAuthorization = vscode.commands.registerCommand('extension.laravelDocsAuthorization', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'authorization'));
     });
     context.subscriptions.push(laravelDocsAuthorization);
-    let laravelDocsBilling = commands.registerCommand('extension.laravelDocsBilling', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'billing'));
+    let laravelDocsBilling = vscode.commands.registerCommand('extension.laravelDocsBilling', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'billing'));
     });
     context.subscriptions.push(laravelDocsBilling);
-    let laravelDocsBlade = commands.registerCommand('extension.laravelDocsBlade', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'blade'));
+    let laravelDocsBlade = vscode.commands.registerCommand('extension.laravelDocsBlade', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'blade'));
     });
     context.subscriptions.push(laravelDocsBlade);
-    let laravelDocsBroadcasting = commands.registerCommand('extension.laravelDocsBroadcasting', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'broadcasting'));
+    let laravelDocsBroadcasting = vscode.commands.registerCommand('extension.laravelDocsBroadcasting', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'broadcasting'));
     });
     context.subscriptions.push(laravelDocsBroadcasting);
-    let laravelDocsCache = commands.registerCommand('extension.laravelDocsCache', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'cache'));
+    let laravelDocsCache = vscode.commands.registerCommand('extension.laravelDocsCache', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'cache'));
     });
     context.subscriptions.push(laravelDocsCache);
-    let laravelDocsCashierPaddle = commands.registerCommand('extension.laravelDocsCashierPaddle', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'cashier-paddle'));
+    let laravelDocsCashierPaddle = vscode.commands.registerCommand('extension.laravelDocsCashierPaddle', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'cashier-paddle'));
     });
     context.subscriptions.push(laravelDocsCashierPaddle);
-    let laravelDocsCollections = commands.registerCommand('extension.laravelDocsCollections', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'collections'));
+    let laravelDocsCollections = vscode.commands.registerCommand('extension.laravelDocsCollections', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'collections'));
     });
     context.subscriptions.push(laravelDocsCollections);
-    let laravelDocsConfiguration = commands.registerCommand('extension.laravelDocsConfiguration', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'configuration'));
+    let laravelDocsConcurrency = vscode.commands.registerCommand('extension.laravelDocsConcurrency', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'concurrency'));
+    });
+    context.subscriptions.push(laravelDocsConcurrency);
+    let laravelDocsConfiguration = vscode.commands.registerCommand('extension.laravelDocsConfiguration', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'configuration'));
     });
     context.subscriptions.push(laravelDocsConfiguration);
-    let laravelDocsConsoleTests = commands.registerCommand('extension.laravelDocsConsoleTests', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'console-tests'));
+    let laravelDocsConsoleTests = vscode.commands.registerCommand('extension.laravelDocsConsoleTests', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'console-tests'));
     });
     context.subscriptions.push(laravelDocsConsoleTests);
-    let laravelDocsContainer = commands.registerCommand('extension.laravelDocsContainer', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'container'));
+    let laravelDocsContainer = vscode.commands.registerCommand('extension.laravelDocsContainer', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'container'));
     });
     context.subscriptions.push(laravelDocsContainer);
-    let laravelDocsContracts = commands.registerCommand('extension.laravelDocsContracts', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'contracts'));
+    let laravelDocsContext = vscode.commands.registerCommand('extension.laravelDocsContext', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'context'));
+    });
+    context.subscriptions.push(laravelDocsContext);
+    let laravelDocsContracts = vscode.commands.registerCommand('extension.laravelDocsContracts', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'contracts'));
     });
     context.subscriptions.push(laravelDocsContracts);
-    let laravelDocsContributions = commands.registerCommand('extension.laravelDocsContributions', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'contributions'));
+    let laravelDocsContributions = vscode.commands.registerCommand('extension.laravelDocsContributions', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'contributions'));
     });
     context.subscriptions.push(laravelDocsContributions);
-    let laravelDocsControllers = commands.registerCommand('extension.laravelDocsControllers', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'controllers'));
+    let laravelDocsControllers = vscode.commands.registerCommand('extension.laravelDocsControllers', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'controllers'));
     });
     context.subscriptions.push(laravelDocsControllers);
-    let laravelDocsCsrf = commands.registerCommand('extension.laravelDocsCsrf', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'csrf'));
+    let laravelDocsCsrf = vscode.commands.registerCommand('extension.laravelDocsCsrf', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'csrf'));
     });
     context.subscriptions.push(laravelDocsCsrf);
-    let laravelDocsDatabase = commands.registerCommand('extension.laravelDocsDatabase', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'database'));
+    let laravelDocsDatabase = vscode.commands.registerCommand('extension.laravelDocsDatabase', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'database'));
     });
     context.subscriptions.push(laravelDocsDatabase);
-    let laravelDocsDatabaseTesting = commands.registerCommand('extension.laravelDocsDatabaseTesting', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'database-testing'));
+    let laravelDocsDatabaseTesting = vscode.commands.registerCommand('extension.laravelDocsDatabaseTesting', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'database-testing'));
     });
     context.subscriptions.push(laravelDocsDatabaseTesting);
-    let laravelDocsDeployment = commands.registerCommand('extension.laravelDocsDeployment', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'deployment'));
+    let laravelDocsDeployment = vscode.commands.registerCommand('extension.laravelDocsDeployment', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'deployment'));
     });
     context.subscriptions.push(laravelDocsDeployment);
-    let laravelDocsDusk = commands.registerCommand('extension.laravelDocsDusk', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'dusk'));
+    let laravelDocsDusk = vscode.commands.registerCommand('extension.laravelDocsDusk', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'dusk'));
     });
     context.subscriptions.push(laravelDocsDusk);
-    let laravelDocsEloquent = commands.registerCommand('extension.laravelDocsEloquent', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'eloquent'));
+    let laravelDocsEloquent = vscode.commands.registerCommand('extension.laravelDocsEloquent', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'eloquent'));
     });
     context.subscriptions.push(laravelDocsEloquent);
-    let laravelDocsEloquentCollections = commands.registerCommand('extension.laravelDocsEloquentCollections', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'eloquent-collections'));
+    let laravelDocsEloquentCollections = vscode.commands.registerCommand('extension.laravelDocsEloquentCollections', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'eloquent-collections'));
     });
     context.subscriptions.push(laravelDocsEloquentCollections);
-    let laravelDocsEloquentFactories = commands.registerCommand('extension.laravelDocsEloquentFactories', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'eloquent-factories'));
+    let laravelDocsEloquentFactories = vscode.commands.registerCommand('extension.laravelDocsEloquentFactories', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'eloquent-factories'));
     });
     context.subscriptions.push(laravelDocsEloquentFactories);
-    let laravelDocsEloquentMutators = commands.registerCommand('extension.laravelDocsEloquentMutators', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'eloquent-mutators'));
+    let laravelDocsEloquentMutators = vscode.commands.registerCommand('extension.laravelDocsEloquentMutators', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'eloquent-mutators'));
     });
     context.subscriptions.push(laravelDocsEloquentMutators);
-    let laravelDocsEloquentRelationships = commands.registerCommand('extension.laravelDocsEloquentRelationships', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'eloquent-relationships'));
+    let laravelDocsEloquentRelationships = vscode.commands.registerCommand('extension.laravelDocsEloquentRelationships', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'eloquent-relationships'));
     });
     context.subscriptions.push(laravelDocsEloquentRelationships);
-    let laravelDocsEloquentResources = commands.registerCommand('extension.laravelDocsEloquentResources', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'eloquent-resources'));
+    let laravelDocsEloquentResources = vscode.commands.registerCommand('extension.laravelDocsEloquentResources', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'eloquent-resources'));
     });
     context.subscriptions.push(laravelDocsEloquentResources);
-    let laravelDocsEloquentSerialization = commands.registerCommand('extension.laravelDocsEloquentSerialization', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'eloquent-serialization'));
+    let laravelDocsEloquentSerialization = vscode.commands.registerCommand('extension.laravelDocsEloquentSerialization', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'eloquent-serialization'));
     });
     context.subscriptions.push(laravelDocsEloquentSerialization);
-    let laravelDocsEncryption = commands.registerCommand('extension.laravelDocsEncryption', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'encryption'));
+    let laravelDocsEncryption = vscode.commands.registerCommand('extension.laravelDocsEncryption', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'encryption'));
     });
     context.subscriptions.push(laravelDocsEncryption);
-    let laravelDocsEnvoy = commands.registerCommand('extension.laravelDocsEnvoy', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'envoy'));
+    let laravelDocsEnvoy = vscode.commands.registerCommand('extension.laravelDocsEnvoy', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'envoy'));
     });
     context.subscriptions.push(laravelDocsEnvoy);
-    let laravelDocsErrors = commands.registerCommand('extension.laravelDocsErrors', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'errors'));
+    let laravelDocsErrors = vscode.commands.registerCommand('extension.laravelDocsErrors', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'errors'));
     });
     context.subscriptions.push(laravelDocsErrors);
-    let laravelDocsEvents = commands.registerCommand('extension.laravelDocsEvents', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'events'));
+    let laravelDocsEvents = vscode.commands.registerCommand('extension.laravelDocsEvents', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'events'));
     });
     context.subscriptions.push(laravelDocsEvents);
-    let laravelDocsFacades = commands.registerCommand('extension.laravelDocsFacades', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'facades'));
+    let laravelDocsFacades = vscode.commands.registerCommand('extension.laravelDocsFacades', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'facades'));
     });
     context.subscriptions.push(laravelDocsFacades);
-    let laravelDocsFilesystem = commands.registerCommand('extension.laravelDocsFilesystem', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'filesystem'));
+    let laravelDocsFilesystem = vscode.commands.registerCommand('extension.laravelDocsFilesystem', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'filesystem'));
     });
     context.subscriptions.push(laravelDocsFilesystem);
-    let laravelDocsFolio = commands.registerCommand('extension.laravelDocsFolio', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'folio'));
+    let laravelDocsFolio = vscode.commands.registerCommand('extension.laravelDocsFolio', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'folio'));
     });
     context.subscriptions.push(laravelDocsFolio);
-    let laravelDocsFortify = commands.registerCommand('extension.laravelDocsFortify', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'fortify'));
+    let laravelDocsFortify = vscode.commands.registerCommand('extension.laravelDocsFortify', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'fortify'));
     });
     context.subscriptions.push(laravelDocsFortify);
-    let laravelDocsFrontend = commands.registerCommand('extension.laravelDocsFrontend', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'frontend'));
+    let laravelDocsFrontend = vscode.commands.registerCommand('extension.laravelDocsFrontend', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'frontend'));
     });
     context.subscriptions.push(laravelDocsFrontend);
-    let laravelDocsHashing = commands.registerCommand('extension.laravelDocsHashing', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'hashing'));
+    let laravelDocsHashing = vscode.commands.registerCommand('extension.laravelDocsHashing', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'hashing'));
     });
     context.subscriptions.push(laravelDocsHashing);
-    let laravelDocsHelpers = commands.registerCommand('extension.laravelDocsHelpers', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'helpers'));
+    let laravelDocsHelpers = vscode.commands.registerCommand('extension.laravelDocsHelpers', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'helpers'));
     });
     context.subscriptions.push(laravelDocsHelpers);
-    let laravelDocsHomestead = commands.registerCommand('extension.laravelDocsHomestead', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'homestead'));
+    let laravelDocsHomestead = vscode.commands.registerCommand('extension.laravelDocsHomestead', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'homestead'));
     });
     context.subscriptions.push(laravelDocsHomestead);
-    let laravelDocsHorizon = commands.registerCommand('extension.laravelDocsHorizon', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'horizon'));
+    let laravelDocsHorizon = vscode.commands.registerCommand('extension.laravelDocsHorizon', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'horizon'));
     });
     context.subscriptions.push(laravelDocsHorizon);
-    let laravelDocsHttpClient = commands.registerCommand('extension.laravelDocsHttpClient', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'http-client'));
+    let laravelDocsHttpClient = vscode.commands.registerCommand('extension.laravelDocsHttpClient', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'http-client'));
     });
     context.subscriptions.push(laravelDocsHttpClient);
-    let laravelDocsHttpTests = commands.registerCommand('extension.laravelDocsHttpTests', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'http-tests'));
+    let laravelDocsHttpTests = vscode.commands.registerCommand('extension.laravelDocsHttpTests', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'http-tests'));
     });
     context.subscriptions.push(laravelDocsHttpTests);
-    let laravelDocsInstallation = commands.registerCommand('extension.laravelDocsInstallation', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'installation'));
+    let laravelDocsInstallation = vscode.commands.registerCommand('extension.laravelDocsInstallation', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'installation'));
     });
     context.subscriptions.push(laravelDocsInstallation);
-    let laravelDocsLifecycle = commands.registerCommand('extension.laravelDocsLifecycle', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'lifecycle'));
+    let laravelDocsLifecycle = vscode.commands.registerCommand('extension.laravelDocsLifecycle', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'lifecycle'));
     });
     context.subscriptions.push(laravelDocsLifecycle);
-    let laravelDocsLocalization = commands.registerCommand('extension.laravelDocsLocalization', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'localization'));
+    let laravelDocsLocalization = vscode.commands.registerCommand('extension.laravelDocsLocalization', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'localization'));
     });
     context.subscriptions.push(laravelDocsLocalization);
-    let laravelDocsLogging = commands.registerCommand('extension.laravelDocsLogging', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'logging'));
+    let laravelDocsLogging = vscode.commands.registerCommand('extension.laravelDocsLogging', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'logging'));
     });
     context.subscriptions.push(laravelDocsLogging);
-    let laravelDocsMail = commands.registerCommand('extension.laravelDocsMail', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'mail'));
+    let laravelDocsMail = vscode.commands.registerCommand('extension.laravelDocsMail', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'mail'));
     });
     context.subscriptions.push(laravelDocsMail);
-    let laravelDocsMiddleware = commands.registerCommand('extension.laravelDocsMiddleware', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'middleware'));
+    let laravelDocsMiddleware = vscode.commands.registerCommand('extension.laravelDocsMiddleware', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'middleware'));
     });
     context.subscriptions.push(laravelDocsMiddleware);
-    let laravelDocsMigrations = commands.registerCommand('extension.laravelDocsMigrations', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'migrations'));
+    let laravelDocsMigrations = vscode.commands.registerCommand('extension.laravelDocsMigrations', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'migrations'));
     });
     context.subscriptions.push(laravelDocsMigrations);
-    let laravelDocsMix = commands.registerCommand('extension.laravelDocsMix', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'mix'));
+    let laravelDocsMix = vscode.commands.registerCommand('extension.laravelDocsMix', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'mix'));
     });
     context.subscriptions.push(laravelDocsMix);
-    let laravelDocsMocking = commands.registerCommand('extension.laravelDocsMocking', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'mocking'));
+    let laravelDocsMocking = vscode.commands.registerCommand('extension.laravelDocsMocking', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'mocking'));
     });
     context.subscriptions.push(laravelDocsMocking);
-    let laravelDocsNotifications = commands.registerCommand('extension.laravelDocsNotifications', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'notifications'));
+    let laravelDocsMongodb = vscode.commands.registerCommand('extension.laravelDocsMongodb', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'mongodb'));
+    });
+    context.subscriptions.push(laravelDocsMongodb);
+    let laravelDocsNotifications = vscode.commands.registerCommand('extension.laravelDocsNotifications', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'notifications'));
     });
     context.subscriptions.push(laravelDocsNotifications);
-    let laravelDocsOctane = commands.registerCommand('extension.laravelDocsOctane', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'octane'));
+    let laravelDocsOctane = vscode.commands.registerCommand('extension.laravelDocsOctane', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'octane'));
     });
     context.subscriptions.push(laravelDocsOctane);
-    let laravelDocsPackages = commands.registerCommand('extension.laravelDocsPackages', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'packages'));
+    let laravelDocsPackages = vscode.commands.registerCommand('extension.laravelDocsPackages', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'packages'));
     });
     context.subscriptions.push(laravelDocsPackages);
-    let laravelDocsPagination = commands.registerCommand('extension.laravelDocsPagination', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'pagination'));
+    let laravelDocsPagination = vscode.commands.registerCommand('extension.laravelDocsPagination', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'pagination'));
     });
     context.subscriptions.push(laravelDocsPagination);
-    let laravelDocsPassport = commands.registerCommand('extension.laravelDocsPassport', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'passport'));
+    let laravelDocsPassport = vscode.commands.registerCommand('extension.laravelDocsPassport', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'passport'));
     });
     context.subscriptions.push(laravelDocsPassport);
-    let laravelDocsPasswords = commands.registerCommand('extension.laravelDocsPasswords', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'passwords'));
+    let laravelDocsPasswords = vscode.commands.registerCommand('extension.laravelDocsPasswords', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'passwords'));
     });
     context.subscriptions.push(laravelDocsPasswords);
-    let laravelDocsPennant = commands.registerCommand('extension.laravelDocsPennant', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'pennant'));
+    let laravelDocsPennant = vscode.commands.registerCommand('extension.laravelDocsPennant', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'pennant'));
     });
     context.subscriptions.push(laravelDocsPennant);
-    let laravelDocsPint = commands.registerCommand('extension.laravelDocsPint', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'pint'));
+    let laravelDocsPint = vscode.commands.registerCommand('extension.laravelDocsPint', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'pint'));
     });
     context.subscriptions.push(laravelDocsPint);
-    let laravelDocsPrecognition = commands.registerCommand('extension.laravelDocsPrecognition', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'precognition'));
+    let laravelDocsPrecognition = vscode.commands.registerCommand('extension.laravelDocsPrecognition', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'precognition'));
     });
     context.subscriptions.push(laravelDocsPrecognition);
-    let laravelDocsProcesses = commands.registerCommand('extension.laravelDocsProcesses', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'processes'));
+    let laravelDocsProcesses = vscode.commands.registerCommand('extension.laravelDocsProcesses', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'processes'));
     });
     context.subscriptions.push(laravelDocsProcesses);
-    let laravelDocsPrompts = commands.registerCommand('extension.laravelDocsPrompts', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'prompts'));
+    let laravelDocsPrompts = vscode.commands.registerCommand('extension.laravelDocsPrompts', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'prompts'));
     });
     context.subscriptions.push(laravelDocsPrompts);
-    let laravelDocsProviders = commands.registerCommand('extension.laravelDocsProviders', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'providers'));
+    let laravelDocsProviders = vscode.commands.registerCommand('extension.laravelDocsProviders', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'providers'));
     });
     context.subscriptions.push(laravelDocsProviders);
-    let laravelDocsPulse = commands.registerCommand('extension.laravelDocsPulse', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'pulse'));
+    let laravelDocsPulse = vscode.commands.registerCommand('extension.laravelDocsPulse', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'pulse'));
     });
     context.subscriptions.push(laravelDocsPulse);
-    let laravelDocsQueries = commands.registerCommand('extension.laravelDocsQueries', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'queries'));
+    let laravelDocsQueries = vscode.commands.registerCommand('extension.laravelDocsQueries', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'queries'));
     });
     context.subscriptions.push(laravelDocsQueries);
-    let laravelDocsQueues = commands.registerCommand('extension.laravelDocsQueues', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'queues'));
+    let laravelDocsQueues = vscode.commands.registerCommand('extension.laravelDocsQueues', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'queues'));
     });
     context.subscriptions.push(laravelDocsQueues);
-    let laravelDocsRateLimiting = commands.registerCommand('extension.laravelDocsRateLimiting', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'rate-limiting'));
+    let laravelDocsRateLimiting = vscode.commands.registerCommand('extension.laravelDocsRateLimiting', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'rate-limiting'));
     });
     context.subscriptions.push(laravelDocsRateLimiting);
-    let laravelDocsRedis = commands.registerCommand('extension.laravelDocsRedis', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'redis'));
+    let laravelDocsRedis = vscode.commands.registerCommand('extension.laravelDocsRedis', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'redis'));
     });
     context.subscriptions.push(laravelDocsRedis);
-    let laravelDocsReleases = commands.registerCommand('extension.laravelDocsReleases', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'releases'));
+    let laravelDocsReleases = vscode.commands.registerCommand('extension.laravelDocsReleases', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'releases'));
     });
     context.subscriptions.push(laravelDocsReleases);
-    let laravelDocsRequests = commands.registerCommand('extension.laravelDocsRequests', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'requests'));
+    let laravelDocsRequests = vscode.commands.registerCommand('extension.laravelDocsRequests', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'requests'));
     });
     context.subscriptions.push(laravelDocsRequests);
-    let laravelDocsResponses = commands.registerCommand('extension.laravelDocsResponses', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'responses'));
+    let laravelDocsResponses = vscode.commands.registerCommand('extension.laravelDocsResponses', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'responses'));
     });
     context.subscriptions.push(laravelDocsResponses);
-    let laravelDocsRouting = commands.registerCommand('extension.laravelDocsRouting', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'routing'));
+    let laravelDocsReverb = vscode.commands.registerCommand('extension.laravelDocsReverb', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'reverb'));
+    });
+    context.subscriptions.push(laravelDocsReverb);
+    let laravelDocsRouting = vscode.commands.registerCommand('extension.laravelDocsRouting', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'routing'));
     });
     context.subscriptions.push(laravelDocsRouting);
-    let laravelDocsSail = commands.registerCommand('extension.laravelDocsSail', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'sail'));
+    let laravelDocsSail = vscode.commands.registerCommand('extension.laravelDocsSail', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'sail'));
     });
     context.subscriptions.push(laravelDocsSail);
-    let laravelDocsSanctum = commands.registerCommand('extension.laravelDocsSanctum', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'sanctum'));
+    let laravelDocsSanctum = vscode.commands.registerCommand('extension.laravelDocsSanctum', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'sanctum'));
     });
     context.subscriptions.push(laravelDocsSanctum);
-    let laravelDocsScheduling = commands.registerCommand('extension.laravelDocsScheduling', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'scheduling'));
+    let laravelDocsScheduling = vscode.commands.registerCommand('extension.laravelDocsScheduling', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'scheduling'));
     });
     context.subscriptions.push(laravelDocsScheduling);
-    let laravelDocsScout = commands.registerCommand('extension.laravelDocsScout', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'scout'));
+    let laravelDocsScout = vscode.commands.registerCommand('extension.laravelDocsScout', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'scout'));
     });
     context.subscriptions.push(laravelDocsScout);
-    let laravelDocsSeeding = commands.registerCommand('extension.laravelDocsSeeding', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'seeding'));
+    let laravelDocsSeeding = vscode.commands.registerCommand('extension.laravelDocsSeeding', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'seeding'));
     });
     context.subscriptions.push(laravelDocsSeeding);
-    let laravelDocsSession = commands.registerCommand('extension.laravelDocsSession', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'session'));
+    let laravelDocsSession = vscode.commands.registerCommand('extension.laravelDocsSession', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'session'));
     });
     context.subscriptions.push(laravelDocsSession);
-    let laravelDocsSocialite = commands.registerCommand('extension.laravelDocsSocialite', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'socialite'));
+    let laravelDocsSocialite = vscode.commands.registerCommand('extension.laravelDocsSocialite', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'socialite'));
     });
     context.subscriptions.push(laravelDocsSocialite);
-    let laravelDocsStarterKits = commands.registerCommand('extension.laravelDocsStarterKits', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'starter-kits'));
+    let laravelDocsStarterKits = vscode.commands.registerCommand('extension.laravelDocsStarterKits', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'starter-kits'));
     });
     context.subscriptions.push(laravelDocsStarterKits);
-    let laravelDocsStrings = commands.registerCommand('extension.laravelDocsStrings', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'strings'));
+    let laravelDocsStrings = vscode.commands.registerCommand('extension.laravelDocsStrings', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'strings'));
     });
     context.subscriptions.push(laravelDocsStrings);
-    let laravelDocsStructure = commands.registerCommand('extension.laravelDocsStructure', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'structure'));
+    let laravelDocsStructure = vscode.commands.registerCommand('extension.laravelDocsStructure', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'structure'));
     });
     context.subscriptions.push(laravelDocsStructure);
-    let laravelDocsTelescope = commands.registerCommand('extension.laravelDocsTelescope', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'telescope'));
+    let laravelDocsTelescope = vscode.commands.registerCommand('extension.laravelDocsTelescope', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'telescope'));
     });
     context.subscriptions.push(laravelDocsTelescope);
-    let laravelDocsTesting = commands.registerCommand('extension.laravelDocsTesting', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'testing'));
+    let laravelDocsTesting = vscode.commands.registerCommand('extension.laravelDocsTesting', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'testing'));
     });
     context.subscriptions.push(laravelDocsTesting);
-    let laravelDocsUpgrade = commands.registerCommand('extension.laravelDocsUpgrade', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'upgrade'));
+    let laravelDocsUpgrade = vscode.commands.registerCommand('extension.laravelDocsUpgrade', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'upgrade'));
     });
     context.subscriptions.push(laravelDocsUpgrade);
-    let laravelDocsUrls = commands.registerCommand('extension.laravelDocsUrls', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'urls'));
+    let laravelDocsUrls = vscode.commands.registerCommand('extension.laravelDocsUrls', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'urls'));
     });
     context.subscriptions.push(laravelDocsUrls);
-    let laravelDocsValet = commands.registerCommand('extension.laravelDocsValet', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'valet'));
+    let laravelDocsValet = vscode.commands.registerCommand('extension.laravelDocsValet', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'valet'));
     });
     context.subscriptions.push(laravelDocsValet);
-    let laravelDocsValidation = commands.registerCommand('extension.laravelDocsValidation', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'validation'));
+    let laravelDocsValidation = vscode.commands.registerCommand('extension.laravelDocsValidation', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'validation'));
     });
     context.subscriptions.push(laravelDocsValidation);
-    let laravelDocsVerification = commands.registerCommand('extension.laravelDocsVerification', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'verification'));
+    let laravelDocsVerification = vscode.commands.registerCommand('extension.laravelDocsVerification', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'verification'));
     });
     context.subscriptions.push(laravelDocsVerification);
-    let laravelDocsViews = commands.registerCommand('extension.laravelDocsViews', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'views'));
+    let laravelDocsViews = vscode.commands.registerCommand('extension.laravelDocsViews', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'views'));
     });
     context.subscriptions.push(laravelDocsViews);
-    let laravelDocsVite = commands.registerCommand('extension.laravelDocsVite', () => {
-        commands.executeCommand('vscode.open', Uri.parse(baseUrl + 'vite'));
+    let laravelDocsVite = vscode.commands.registerCommand('extension.laravelDocsVite', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'vite'));
     });
     context.subscriptions.push(laravelDocsVite);
 

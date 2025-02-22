@@ -57,18 +57,17 @@ with open(os.path.join(root, '../package.json'), 'w') as f:
 # Generate the extension.ts file
 with open(os.path.join(root, '../src/extension.ts'), 'w+') as f:
     f.write("'use strict';\n")
-    f.write("import { workspace, commands, Uri, ExtensionContext } from 'vscode'\n\n")
-    f.write("export function activate(context: ExtensionContext) {\n\n")
-    f.write('    let version = workspace.getConfiguration("laravelDocs").version;' + "\n")
-    f.write("    let baseUrl = version ? `https://laravel.com/docs/${version}/` : 'https://laravel.com/docs/';\n\n");
-
+    f.write("import * as vscode from 'vscode'\n\n")
+    f.write("export function activate(context: vscode.ExtensionContext) {\n\n")
+    f.write('    let version = vscode.workspace.getConfiguration("laravelDocs").version;' + "\n")
+    f.write("    let baseUrl = version ? `https://laravel.com/docs/${version}/` : 'https://laravel.com/docs/';\n\n")
 
     for page in pages:
         f.write(
-            '    let ' + page['command'] + ' = ' + 'commands.registerCommand('
+            '    let ' + page['command'] + ' = ' + 'vscode.commands.registerCommand('
             + "'extension." + page['command'] + "', () => {\n"
-            + "        commands.executeCommand('vscode.open', "
-                + "Uri.parse(baseUrl + '" + page['slug'] + "'));\n"
+            + "        vscode.commands.executeCommand('vscode.open', "
+                + "vscode.Uri.parse(baseUrl + '" + page['slug'] + "'));\n"
             + "    });\n"
             + "    context.subscriptions.push(" + page['command'] + ");\n"
         )
