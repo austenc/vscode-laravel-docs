@@ -29,7 +29,7 @@
                 },
                 "laravelDocs.useSimpleBrowser": {
                     "type": "boolean",
-                    "default": false,
+                    "default": true,
                     "description": "Use the simple browser to open the docs inside vscode instead of the default browser.",
                     "scope": "resource"
                 }
@@ -82,6 +82,11 @@
                 "title": "Collections"
             },
             {
+                "command": "extension.laravelDocsConcurrency",
+                "category": "Laravel Docs",
+                "title": "Concurrency"
+            },
+            {
                 "command": "extension.laravelDocsConfiguration",
                 "category": "Laravel Docs",
                 "title": "Configuration"
@@ -95,6 +100,11 @@
                 "command": "extension.laravelDocsContainer",
                 "category": "Laravel Docs",
                 "title": "Container"
+            },
+            {
+                "command": "extension.laravelDocsContext",
+                "category": "Laravel Docs",
+                "title": "Context"
             },
             {
                 "command": "extension.laravelDocsContracts",
@@ -292,6 +302,11 @@
                 "title": "Mocking"
             },
             {
+                "command": "extension.laravelDocsMongodb",
+                "category": "Laravel Docs",
+                "title": "Mongodb"
+            },
+            {
                 "command": "extension.laravelDocsNotifications",
                 "category": "Laravel Docs",
                 "title": "Notifications"
@@ -390,6 +405,11 @@
                 "command": "extension.laravelDocsResponses",
                 "category": "Laravel Docs",
                 "title": "Responses"
+            },
+            {
+                "command": "extension.laravelDocsReverb",
+                "category": "Laravel Docs",
+                "title": "Reverb"
             },
             {
                 "command": "extension.laravelDocsRouting",
@@ -515,9 +535,11 @@
         "onCommand:extension.laravelDocsCache",
         "onCommand:extension.laravelDocsCashierPaddle",
         "onCommand:extension.laravelDocsCollections",
+        "onCommand:extension.laravelDocsConcurrency",
         "onCommand:extension.laravelDocsConfiguration",
         "onCommand:extension.laravelDocsConsoleTests",
         "onCommand:extension.laravelDocsContainer",
+        "onCommand:extension.laravelDocsContext",
         "onCommand:extension.laravelDocsContracts",
         "onCommand:extension.laravelDocsContributions",
         "onCommand:extension.laravelDocsControllers",
@@ -557,6 +579,7 @@
         "onCommand:extension.laravelDocsMigrations",
         "onCommand:extension.laravelDocsMix",
         "onCommand:extension.laravelDocsMocking",
+        "onCommand:extension.laravelDocsMongodb",
         "onCommand:extension.laravelDocsNotifications",
         "onCommand:extension.laravelDocsOctane",
         "onCommand:extension.laravelDocsPackages",
@@ -577,6 +600,7 @@
         "onCommand:extension.laravelDocsReleases",
         "onCommand:extension.laravelDocsRequests",
         "onCommand:extension.laravelDocsResponses",
+        "onCommand:extension.laravelDocsReverb",
         "onCommand:extension.laravelDocsRouting",
         "onCommand:extension.laravelDocsSail",
         "onCommand:extension.laravelDocsSanctum",
