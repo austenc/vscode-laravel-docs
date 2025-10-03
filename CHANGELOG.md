@@ -6,6 +6,11 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## 1.13.0
+
+- Update documentation for latest Laravel version
+- Add "Change Version" command to the command palette to allow setting the version without manually going to user preferences.
+
 ## 1.12.0
 
 - Added new docs pages from Laravel site
