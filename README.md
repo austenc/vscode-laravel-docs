@@ -24,17 +24,3 @@ To use a specific version of Laravel in URLs, use this configuration option in y
 If you enjoy this extension, consider [buying me a coffee on GitHub Sponsors](https://github.com/sponsors/austenc?frequency=one-time&sponsor=austenc).
 
 Your support helps keep this extension maintained, adds new features, and fuels the caffeine needed to debug those tricky edge cases. Plus, you'll get that warm fuzzy feeling of supporting open source! 🎉
-
-## Release Notes
-
-### 1.4.0
-
-- Add "Change Version" command to the command palette to allow setting the version without manually going to user preferences.
-
-### 1.3.0
-
-Added `laravelDocs.version` configuration option to specify Laravel version.
-
-### 1.0.0
-
-Initial release -- Laravel 5.5 support
