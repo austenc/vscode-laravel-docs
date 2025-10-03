@@ -25,9 +25,24 @@ root = os.path.dirname(__file__)
 
 # Compile all the info for the pages
 for url in sorted(set(links)):
+    # Parse URL to handle both patterns:
+    # /docs/12.x/artisan (versioned)
+    # /docs/horizon (unversioned)
+    url_parts = url.split('/')
 
-    topic = url.split('/')[3].title().replace('-', ' ').split('#')[0]
-    slug = url.split('/')[3].split('#')[0]
+    if len(url_parts) >= 4 and url_parts[2] and url_parts[3]:
+        # Check if the third part is a version (contains .x)
+        if '.x' in url_parts[2]:
+            # Versioned URL: /docs/12.x/artisan
+            topic = url_parts[3].title().replace('-', ' ').split('#')[0]
+            slug = url_parts[3].split('#')[0]
+        else:
+            # Unversioned URL: /docs/horizon
+            topic = url_parts[2].title().replace('-', ' ').split('#')[0]
+            slug = url_parts[2].split('#')[0]
+    else:
+        # Skip malformed URLs
+        continue
 
     if (topic not in found):
         found.append(topic)
@@ -41,15 +56,20 @@ for url in sorted(set(links)):
 with open(os.path.join(root, '../package.json'), 'r') as f:
     data = json.load(f)
     data['contributes']['commands'] = []
-    data['activationEvents'] = []
 
     for page in pages:
-        data['activationEvents'].append("onCommand:extension." + page['command'])
         data['contributes']['commands'].append({
             "command": "extension.{}".format(page['command']),
             "category": "Laravel Docs",
             "title": page['topic'],
         })
+
+    # Add the change version command
+    data['contributes']['commands'].append({
+        "command": "extension.laravelDocsChangeVersion",
+        "category": "Laravel Docs",
+        "title": "Change Version",
+    })
 
 with open(os.path.join(root, '../package.json'), 'w') as f:
     json.dump(data, f, indent=4)
@@ -71,6 +91,33 @@ with open(os.path.join(root, '../src/extension.ts'), 'w+') as f:
             + "    });\n"
             + "    context.subscriptions.push(" + page['command'] + ");\n"
         )
+
+    # Add the change version command
+    f.write(
+        '    let laravelDocsChangeVersion = vscode.commands.registerCommand('
+        + "'extension.laravelDocsChangeVersion', async () => {\n"
+        + "        const versions = [\n"
+        + "            { label: 'Latest (default)', value: '' },\n"
+        + "            { label: 'Laravel 11.x', value: '11.x' },\n"
+        + "            { label: 'Laravel 10.x', value: '10.x' },\n"
+        + "            { label: 'Laravel 9.x', value: '9.x' },\n"
+        + "            { label: 'Laravel 8.x', value: '8.x' },\n"
+        + "            { label: 'Laravel 7.x', value: '7.x' },\n"
+        + "            { label: 'Laravel 6.x', value: '6.x' },\n"
+        + "            { label: 'Laravel 5.x', value: '5.x' }\n"
+        + "        ];\n\n"
+        + "        const selectedVersion = await vscode.window.showQuickPick(versions, {\n"
+        + "            placeHolder: 'Select Laravel documentation version',\n"
+        + "            title: 'Laravel Docs Version'\n"
+        + "        });\n\n"
+        + "        if (selectedVersion) {\n"
+        + "            const config = vscode.workspace.getConfiguration('laravelDocs');\n"
+        + "            await config.update('version', selectedVersion.value, vscode.ConfigurationTarget.Global);\n"
+        + "            vscode.window.showInformationMessage(`Laravel docs version set to: ${selectedVersion.label}`);\n"
+        + "        }\n"
+        + "    });\n"
+        + "    context.subscriptions.push(laravelDocsChangeVersion);\n"
+    )
 
     f.write("\n}")
 
