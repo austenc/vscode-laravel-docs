@@ -19,6 +19,11 @@ To use a specific version of Laravel in URLs, use this configuration option in y
 
 **Important:** After modifying the `laravelDocs.version` configuration value, you need to *reload Visual Studio Code* for the changes to take effect.
 
+## Supporting My Work
+
+If you enjoy this extension, consider [buying me a coffee on GitHub Sponsors](https://github.com/sponsors/austenc?frequency=one-time&sponsor=austenc).
+
+Your support helps keep this extension maintained, adds new features, and fuels the caffeine needed to debug those tricky edge cases. Plus, you'll get that warm fuzzy feeling of supporting open source! 🎉
 
 ## Release Notes
 
