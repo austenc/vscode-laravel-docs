@@ -56,10 +56,8 @@ for url in sorted(set(links)):
 with open(os.path.join(root, '../package.json'), 'r') as f:
     data = json.load(f)
     data['contributes']['commands'] = []
-    data['activationEvents'] = []
 
     for page in pages:
-        data['activationEvents'].append("onCommand:extension." + page['command'])
         data['contributes']['commands'].append({
             "command": "extension.{}".format(page['command']),
             "category": "Laravel Docs",
@@ -67,7 +65,6 @@ with open(os.path.join(root, '../package.json'), 'r') as f:
         })
 
     # Add the change version command
-    data['activationEvents'].append("onCommand:extension.laravelDocsChangeVersion")
     data['contributes']['commands'].append({
         "command": "extension.laravelDocsChangeVersion",
         "category": "Laravel Docs",
