@@ -1,25 +1,30 @@
 # VSCode Laravel Docs
 
-Easily access Laravel docs pages from within VSCode
+Open Laravel documentation pages directly from the command palette.
 
 ## Features
 
-To use this extension, simply use `⌘ + Shift + P` to open the command palette (`Ctrl` on windows / linux) and search for "Laravel Docs" or the specific topic you're after. That's it!
+To use this extension, use `⌘ + Shift + P` on macOS or `Ctrl + Shift + P` on Windows or Linux and start searching for "Laravel Docs" or the specific topic you're after. Choose your docs page and it will open in your default browser!
 
-Here's an example:
+### Example Usage
 ![Extension Preview](img/preview.gif)
 
 ## Configuration
 
-To use a specific version of Laravel in URLs, use this configuration option in your User Preferences file:
+To use a specific version of Laravel in URLs, use this configuration option in your User Preferences file, or use the "Change Version" command from the command palette:
 
 ```
 "laravelDocs.version": 11.x
 ```
 
-**Note:** After modifying the `laravelDocs.version` configuration, you need to *restart Visual Studio Code* for the changes to take effect.
+**Important:** After modifying the `laravelDocs.version` configuration value, you need to *reload Visual Studio Code* for the changes to take effect.
+
 
 ## Release Notes
+
+### 1.4.0
+
+- Add "Change Version" command to the command palette to allow setting the version without manually going to user preferences.
 
 ### 1.3.0
 
