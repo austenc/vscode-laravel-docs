@@ -202,6 +202,10 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'mail'));
     });
     context.subscriptions.push(laravelDocsMail);
+    let laravelDocsMcp = vscode.commands.registerCommand('extension.laravelDocsMcp', () => {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'mcp'));
+    });
+    context.subscriptions.push(laravelDocsMcp);
     let laravelDocsMiddleware = vscode.commands.registerCommand('extension.laravelDocsMiddleware', () => {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'middleware'));
     });
@@ -386,7 +390,6 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(baseUrl + 'vite'));
     });
     context.subscriptions.push(laravelDocsVite);
-
     let laravelDocsChangeVersion = vscode.commands.registerCommand('extension.laravelDocsChangeVersion', async () => {
         const versions = [
             { label: 'Latest (default)', value: '' },

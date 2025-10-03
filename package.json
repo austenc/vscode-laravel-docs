@@ -276,6 +276,11 @@
                 "title": "Mail"
             },
             {
+                "command": "extension.laravelDocsMcp",
+                "category": "Laravel Docs",
+                "title": "Mcp"
+            },
+            {
                 "command": "extension.laravelDocsMiddleware",
                 "category": "Laravel Docs",
                 "title": "Middleware"
@@ -574,6 +579,7 @@
         "onCommand:extension.laravelDocsLocalization",
         "onCommand:extension.laravelDocsLogging",
         "onCommand:extension.laravelDocsMail",
+        "onCommand:extension.laravelDocsMcp",
         "onCommand:extension.laravelDocsMiddleware",
         "onCommand:extension.laravelDocsMigrations",
         "onCommand:extension.laravelDocsMix",
