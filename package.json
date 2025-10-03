@@ -504,6 +504,11 @@
                 "command": "extension.laravelDocsVite",
                 "category": "Laravel Docs",
                 "title": "Vite"
+            },
+            {
+                "command": "extension.laravelDocsChangeVersion",
+                "category": "Laravel Docs",
+                "title": "Change Version"
             }
         ]
     },
@@ -614,6 +619,7 @@
         "onCommand:extension.laravelDocsValidation",
         "onCommand:extension.laravelDocsVerification",
         "onCommand:extension.laravelDocsViews",
-        "onCommand:extension.laravelDocsVite"
+        "onCommand:extension.laravelDocsVite",
+        "onCommand:extension.laravelDocsChangeVersion"
     ]
 }

@@ -387,4 +387,29 @@ export function activate(context: vscode.ExtensionContext) {
     });
     context.subscriptions.push(laravelDocsVite);
 
+    let laravelDocsChangeVersion = vscode.commands.registerCommand('extension.laravelDocsChangeVersion', async () => {
+        const versions = [
+            { label: 'Latest (default)', value: '' },
+            { label: 'Laravel 11.x', value: '11.x' },
+            { label: 'Laravel 10.x', value: '10.x' },
+            { label: 'Laravel 9.x', value: '9.x' },
+            { label: 'Laravel 8.x', value: '8.x' },
+            { label: 'Laravel 7.x', value: '7.x' },
+            { label: 'Laravel 6.x', value: '6.x' },
+            { label: 'Laravel 5.x', value: '5.x' }
+        ];
+
+        const selectedVersion = await vscode.window.showQuickPick(versions, {
+            placeHolder: 'Select Laravel documentation version',
+            title: 'Laravel Docs Version'
+        });
+
+        if (selectedVersion) {
+            const config = vscode.workspace.getConfiguration('laravelDocs');
+            await config.update('version', selectedVersion.value, vscode.ConfigurationTarget.Global);
+            vscode.window.showInformationMessage(`Laravel docs version set to: ${selectedVersion.label}`);
+        }
+    });
+    context.subscriptions.push(laravelDocsChangeVersion);
+
 }

@@ -72,6 +72,33 @@ with open(os.path.join(root, '../src/extension.ts'), 'w+') as f:
             + "    context.subscriptions.push(" + page['command'] + ");\n"
         )
 
+    # Add the change version command
+    f.write(
+        '    let laravelDocsChangeVersion = vscode.commands.registerCommand('
+        + "'extension.laravelDocsChangeVersion', async () => {\n"
+        + "        const versions = [\n"
+        + "            { label: 'Latest (default)', value: '' },\n"
+        + "            { label: 'Laravel 11.x', value: '11.x' },\n"
+        + "            { label: 'Laravel 10.x', value: '10.x' },\n"
+        + "            { label: 'Laravel 9.x', value: '9.x' },\n"
+        + "            { label: 'Laravel 8.x', value: '8.x' },\n"
+        + "            { label: 'Laravel 7.x', value: '7.x' },\n"
+        + "            { label: 'Laravel 6.x', value: '6.x' },\n"
+        + "            { label: 'Laravel 5.x', value: '5.x' }\n"
+        + "        ];\n\n"
+        + "        const selectedVersion = await vscode.window.showQuickPick(versions, {\n"
+        + "            placeHolder: 'Select Laravel documentation version',\n"
+        + "            title: 'Laravel Docs Version'\n"
+        + "        });\n\n"
+        + "        if (selectedVersion) {\n"
+        + "            const config = vscode.workspace.getConfiguration('laravelDocs');\n"
+        + "            await config.update('version', selectedVersion.value, vscode.ConfigurationTarget.Global);\n"
+        + "            vscode.window.showInformationMessage(`Laravel docs version set to: ${selectedVersion.label}`);\n"
+        + "        }\n"
+        + "    });\n"
+        + "    context.subscriptions.push(laravelDocsChangeVersion);\n"
+    )
+
     f.write("\n}")
 
 print('Plugin files rebuilt successfully!')
