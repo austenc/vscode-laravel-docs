@@ -11,10 +11,10 @@ Here's an example:
 
 ## Configuration
 
-To use a specific version of Laravel in URLs, use this configuration option:
+To use a specific version of Laravel in URLs, use this configuration option in your User Preferences file:
 
 ```
-"laravelDocs.version": 6.x
+"laravelDocs.version": 11.x
 ```
 
 **Note:** After modifying the `laravelDocs.version` configuration, you need to *restart Visual Studio Code* for the changes to take effect.
